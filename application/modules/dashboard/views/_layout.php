@@ -300,21 +300,21 @@
                                             <!-- Permintaan Pembelian (PR) -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="far fa-edit nav-icon"></i>
                                                     <p>Permintaan Pembelian (PR)</p>
                                                 </a>
                                             </li>
                                             <!-- Pesanan Pembelian (SO) -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-file-invoice nav-icon"></i>
                                                     <p>Pesanan Pembelian (PO)</p>
                                                 </a>
                                             </li>
                                             <!-- Penerimaan Barang -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-people-carry nav-icon"></i>
                                                     <p>Penerimaan Barang</p>
                                                 </a>
                                             </li>
@@ -342,7 +342,7 @@
                                             <!-- Pembayaran Langsung -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-hand-holding-usd nav-icon"></i>
                                                     <p>Pembayaran Langsung</p>
                                                 </a>
                                             </li>
@@ -375,21 +375,21 @@
                                             <!-- Validasi Uang Jalan -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="far fa-check-square nav-icon"></i>
                                                     <p>Validasi Uang Jalan</p>
                                                 </a>
                                             </li>
                                             <!-- Invoice Trucking -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-file-invoice nav-icon"></i>
                                                     <p>Invoice Trucking</p>
                                                 </a>
                                             </li>
                                             <!-- Nota Debit -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-receipt nav-icon"></i>
                                                     <p>Nota Debit</p>
                                                 </a>
                                             </li>
@@ -403,7 +403,7 @@
                                             <!-- Pembayaran Piutang -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-hand-holding-usd nav-icon"></i>
                                                     <p>Pembayaran Piutang</p>
                                                 </a>
                                             </li>
