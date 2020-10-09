@@ -237,14 +237,14 @@
                                     <!-- armada -->
                                     <li class="nav-item">
                                         <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                            <i class="fab fa-adn nav-icon"></i>
+                                            <i class="fas fa-truck-moving nav-icon"></i>
                                             <p>Armada</p>
                                         </a>
                                     </li>
                                     <!-- stock spare part -->
                                     <li class="nav-item">
                                         <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                            <i class="fab fa-adn nav-icon"></i>
+                                            <i class="fas fa-drum-steelpan nav-icon"></i>
                                             <p>Spare Part</p>
                                         </a>
                                     </li>
