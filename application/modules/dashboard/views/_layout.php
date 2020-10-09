@@ -236,6 +236,59 @@
                                 </ul>
                             </li>
 
+                            <!-- transaksi -->
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-exchange-alt nav-icon"></i>
+                                    <p>TRANSAKSI<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <!-- aktiva tetap -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="far fa-building nav-icon"></i>
+                                            <p>Aktiva Tetap</p>
+                                        </a>
+                                    </li>
+                                    <!-- Penjualan -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-cash-register nav-icon"></i>
+                                            <p>Penjualan</p>
+                                        </a>
+                                    </li>
+                                    <!-- harga pokok -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-funnel-dollar nav-icon"></i>
+                                            <p>Harga Pokok</p>
+                                        </a>
+                                    </li>
+                                    <!-- stok -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fab fa-nutritionix nav-icon"></i>
+                                            <p>Stok</p>
+                                        </a>
+                                    </li>
+                                    <!-- kas / bank -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-money-check-alt nav-icon"></i>
+                                            <p>Kas / Bank</p>
+                                        </a>
+                                    </li>
+                                    <!-- jurnal umum -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="far fa-newspaper nav-icon"></i>
+                                            <p>Jurnal Umum</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- /transaksi -->
+
                             <!-- laporan -->
                             <li class="nav-item has-treeview
                                 <?php
