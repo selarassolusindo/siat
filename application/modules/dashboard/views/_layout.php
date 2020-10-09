@@ -348,43 +348,7 @@
                             </li>
                             <!-- /transaksi -->
 
-                            <!-- proses -->
-                            <li class="nav-item has-treeview
-                                <?php
-                                switch ($this->uri->segment(1)) {
-                                    case 'tamu':
-                                        echo 'menu-open';
-                                        break;
-                                    default:
-                                        echo '';
-                                }
-                                ?>
-                                ">
-                                <a href="#" class="nav-link">
-                                    <i class="fab fa-stack-overflow nav-icon"></i>
-                                    <p>PROSES<i class="right fas fa-angle-left"></i></p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <!-- posting -->
-                                    <!-- <li class="nav-item">
-                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                            <i class="fab fa-ioxhost nav-icon"></i>
-                                            <p>Posting</p>
-                                        </a>
-                                    </li> -->
-                                    <!-- input data tamu -->
-                                    <!-- <li class="nav-item">
-                                        <a href="<?php echo site_url('tamu'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'tamu' ? 'active' : ''; ?>">
-                                            <i class="fas fa-users nav-icon"></i>
-                                            <p>Data Tamu</p>
-                                        </a>
-                                    </li> -->
-                                </ul>
-                            </li>
-                            <!-- /proses -->
-
                             <!-- laporan -->
-                            <!-- <li class="nav-item has-treeview"> -->
                             <li class="nav-item has-treeview
                                 <?php
                                 switch ($this->uri->segment(1)) {
