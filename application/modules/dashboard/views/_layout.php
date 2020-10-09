@@ -222,7 +222,7 @@
                                     <!-- shipper -->
                                     <li class="nav-item">
                                         <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                            <i class="fab fa-adn nav-icon"></i>
+                                            <i class="fas fa-dolly-flatbed nav-icon"></i>
                                             <p>Shipper</p>
                                         </a>
                                     </li>
