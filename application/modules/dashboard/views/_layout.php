@@ -321,21 +321,21 @@
                                             <!-- Retur Pembelian -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-undo nav-icon"></i>
                                                     <p>Retur Pembelian</p>
                                                 </a>
                                             </li>
                                             <!-- Hutang Vendor -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-file-signature nav-icon"></i>
                                                     <p>Hutang Vendor</p>
                                                 </a>
                                             </li>
                                             <!-- Pembelian Langsung -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-dolly-flatbed nav-icon"></i>
                                                     <p>Pembelian Langsung</p>
                                                 </a>
                                             </li>
@@ -361,14 +361,14 @@
                                             <!-- Pesanan Penjualan (SO) -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="far fa-edit nav-icon"></i>
                                                     <p>Pesanan Penjualan (SO)</p>
                                                 </a>
                                             </li>
                                             <!-- Uang Jalan / Kas Bon -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-file-invoice-dollar nav-icon"></i>
                                                     <p>Uang Jalan / Kas Bon</p>
                                                 </a>
                                             </li>
@@ -396,7 +396,7 @@
                                             <!-- Piutang Customer -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="fas fa-file-signature nav-icon"></i>
                                                     <p>Piutang Customer</p>
                                                 </a>
                                             </li>
