@@ -350,15 +350,15 @@
 
                             <!-- laporan -->
                             <li class="nav-item has-treeview
-                                <?php
-                                switch ($this->uri->segment(1)) {
-                                    case 'buku-besar':
-                                        echo 'menu-open';
-                                        break;
-                                    default:
-                                        echo '';
-                                }
-                                ?>
+                            <?php
+                            switch ($this->uri->segment(1)) {
+                                case 'buku-besar':
+                                    echo 'menu-open';
+                                    break;
+                                default:
+                                    echo '';
+                            }
+                            ?>
                             ">
                                 <a href="#" class="nav-link">
                                     <i class="fas fa-scroll nav-icon"></i>
@@ -484,10 +484,10 @@
 
             <!-- Main Footer -->
             <footer class="main-footer">
-                <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-                All rights reserved.
+                <strong>&copy; <a href="http://lts.io" target="_blank">PT. LTS</a> <?php echo date('Y'); ?></strong>.
+                All rights reserved. Sistem Informasi Akuntansi Trucking created by <a href="selusin.online" target="_blank">SELUSIN</a>.
                 <div class="float-right d-none d-sm-inline-block">
-                    <b>Version</b> 3.0.5
+                    <b><?php echo SITE_VERSION; ?></b>
                 </div>
             </footer>
         </div>
