@@ -236,6 +236,38 @@
                                 </ul>
                             </li>
 
+                            <!-- utility -->
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-tools nav-icon"></i>
+                                    <p>UTILITY<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <!-- backup -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-download nav-icon"></i>
+                                            <p>Backup</p>
+                                        </a>
+                                    </li>
+                                    <!-- restore -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-upload nav-icon"></i>
+                                            <p>Restore</p>
+                                        </a>
+                                    </li>
+                                    <!-- change password -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('change-password'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'change-password' ? 'active' : ''; ?>">
+                                            <i class="fas fa-key nav-icon"></i>
+                                            <p>Change Password</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- /utility -->
+
                             <!-- Login or logout -->
                             <li class="nav-item">
                                 <?php if ($this->session->userdata('user_id') != "") { ?>
