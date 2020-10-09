@@ -236,6 +236,48 @@
                                 </ul>
                             </li>
 
+                            <!-- laporan -->
+                            <li class="nav-item has-treeview
+                                <?php
+                                switch ($this->uri->segment(1)) {
+                                    case 'buku-besar':
+                                        echo 'menu-open';
+                                        break;
+                                    default:
+                                        echo '';
+                                }
+                                ?>
+                            ">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-scroll nav-icon"></i>
+                                    <p>LAPORAN<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <!-- buku besar -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
+                                            <i class="fab fa-accusoft nav-icon"></i>
+                                            <p>Buku Besar</p>
+                                        </a>
+                                    </li>
+                                    <!-- neraca -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-balance-scale nav-icon"></i>
+                                            <p>Neraca</p>
+                                        </a>
+                                    </li>
+                                    <!-- laba / rugi -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-file-invoice-dollar nav-icon"></i>
+                                            <p>Laba / Rugi</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- /laporan -->
+
                             <!-- utility -->
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
