@@ -116,6 +116,7 @@
     </head>
 
     <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed text-sm">
+
         <div class="wrapper">
             <!-- Navbar -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -136,6 +137,7 @@
 
             <!-- Main Sidebar Container -->
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
                 <!-- Brand Logo -->
                 <a href="<?php echo site_url(); ?>" class="brand-link">
                     <img src="<?php echo base_url(); ?>assets/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -144,6 +146,7 @@
 
                 <!-- Sidebar -->
                 <div class="sidebar">
+
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
@@ -365,11 +368,48 @@
                                     <p>LAPORAN<i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 <ul class="nav nav-treeview">
+                                    <!-- Profit Armada -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
+                                            <i class="fab fa-accusoft nav-icon"></i>
+                                            <p>Profit Armada</p>
+                                        </a>
+                                    </li>
+                                    <!-- Detail Armada -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
+                                            <i class="fab fa-accusoft nav-icon"></i>
+                                            <p>Detail Armada</p>
+                                        </a>
+                                    </li>
+                                    <!-- Kartu Stok Spare Part -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
+                                            <i class="fab fa-accusoft nav-icon"></i>
+                                            <p>Kartu Stok Spare Part</p>
+                                        </a>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <!-- Hutang Vendor -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
+                                            <i class="fab fa-accusoft nav-icon"></i>
+                                            <p>Hutang Vendor</p>
+                                        </a>
+                                    </li>
+                                    <!-- Piutang Customer -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
+                                            <i class="fab fa-accusoft nav-icon"></i>
+                                            <p>Piutang Customer</p>
+                                        </a>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
                                     <!-- buku besar -->
                                     <li class="nav-item">
                                         <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
                                             <i class="fab fa-accusoft nav-icon"></i>
-                                            <p>Buku Besar</p>
+                                            <p>Buku Besar (Ledger)</p>
                                         </a>
                                     </li>
                                     <!-- neraca -->
@@ -438,41 +478,46 @@
                             </li>
 
                         </ul>
+
                     </nav>
                     <!-- /.sidebar-menu -->
+
                 </div>
                 <!-- /.sidebar -->
+
             </aside>
 
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
+
                 <!-- Content Header (Page header) -->
                 <div class="content-header">
-                  <div class="container-fluid">
-                    <div class="row mb-2">
-                      <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Dashboard v2</h1>
-                      </div><!-- /.col -->
-                      <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                          <li class="breadcrumb-item"><a href="#">Home</a></li>
-                          <li class="breadcrumb-item active">Dashboard v2</li>
-                        </ol>
-                      </div><!-- /.col -->
-                    </div><!-- /.row -->
-                  </div><!-- /.container-fluid -->
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 text-dark">Dashboard v2</h1>
+                            </div><!-- /.col -->
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active">Dashboard v2</li>
+                                </ol>
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
                 </div>
                 <!-- /.content-header -->
 
                 <!-- Main content -->
                 <section class="content">
-                  <div class="container-fluid">
+                    <div class="container-fluid">
 
-                      <?php $this->load->view($_view); ?>
+                        <?php $this->load->view($_view); ?>
 
-                  </div><!--/. container-fluid -->
+                    </div><!--/. container-fluid -->
                 </section>
                 <!-- /.content -->
+
             </div>
             <!-- /.content-wrapper -->
 
@@ -490,6 +535,7 @@
                     <b><?php echo SITE_VERSION; ?></b>
                 </div>
             </footer>
+
         </div>
         <!-- ./wrapper -->
 
@@ -517,5 +563,7 @@
 
         <!-- PAGE SCRIPTS -->
         <script src="<?php echo base_url(); ?>assets/adminlte/dist/js/pages/dashboard2.js"></script>
+
     </body>
+
 </html>
