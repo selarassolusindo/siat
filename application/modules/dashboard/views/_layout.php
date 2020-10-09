@@ -170,325 +170,293 @@
                             </li>
                             <!-- /dashboard -->
 
-                            <?php //if ($this->ion_auth->logged_in()) { ?>
-
-                                <!-- SETUP -->
-                                <?php //if ($this->ion_auth->in_group('admin') or ($this->ion_auth->in_group('admin') and $this->ion_auth->in_group('piw')) or ($this->ion_auth->in_group('admin') and $this->ion_auth->in_group('ssw'))) { ?>
-                                    <!-- setup -->
-                                    <li class="nav-item has-treeview
-                                        <?php
-                                        switch ($this->uri->segment(1)) {
-                                            case 'company':
-                                            case 'user-management':
-                                            case 'akun':
-                                            case 'akun2':
-                                            case 'input-tanggal-saldo-awal':
-                                            case 'tanggal-saldo-awal':
-                                            case 'saldo-awal':
-                                            case 'package':
-                                                echo 'menu-open';
-                                                break;
-                                            default:
-                                                echo '';
-                                        }
-                                        ?>
-                                    ">
-                                        <a href="#" class="nav-link">
-                                            <i class="fas fa-coins nav-icon"></i>
-                                            <p>SETUP<i class="right fas fa-angle-left"></i></p>
+                            <!-- setup -->
+                            <li class="nav-item has-treeview
+                                <?php
+                                switch ($this->uri->segment(1)) {
+                                    case 'company':
+                                    case 'user-management':
+                                    case 'akun':
+                                    case 'akun2':
+                                    case 'input-tanggal-saldo-awal':
+                                    case 'tanggal-saldo-awal':
+                                    case 'saldo-awal':
+                                    case 'package':
+                                        echo 'menu-open';
+                                        break;
+                                    default:
+                                        echo '';
+                                }
+                                ?>
+                            ">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-coins nav-icon"></i>
+                                    <p>SETUP<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <!-- perusahaan -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('company'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'company' ? 'active' : ''; ?>">
+                                            <i class="fas fa-door-open nav-icon"></i>
+                                            <p>Company</p>
                                         </a>
-                                        <ul class="nav nav-treeview">
-                                            <?php //if (($this->ion_auth->in_group('admin') and $this->ion_auth->in_group('piw')) or ($this->ion_auth->in_group('admin') and $this->ion_auth->in_group('ssw'))) { ?>
-                                            <!-- perusahaan -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('company'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'company' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-door-open nav-icon"></i>
-                                                    <p>Company</p>
-                                                </a>
-                                            </li>
-                                            <!-- user management -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('user-management'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'user-management' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-user-friends nav-icon"></i>
-                                                    <p>User Management</p>
-                                                </a>
-                                            </li>
-
-                                            <div class="dropdown-divider"></div>
-
-                                            <!-- customer -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                                    <i class="fab fa-adn nav-icon"></i>
-                                                    <p>Customer</p>
-                                                </a>
-                                            </li>
-                                            <!-- shipper -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                                    <i class="fab fa-adn nav-icon"></i>
-                                                    <p>Shipper</p>
-                                                </a>
-                                            </li>
-                                            <!-- vendor -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                                    <i class="fab fa-adn nav-icon"></i>
-                                                    <p>Vendor</p>
-                                                </a>
-                                            </li>
-
-                                            <div class="dropdown-divider"></div>
-
-                                            <!-- armada -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                                    <i class="fab fa-adn nav-icon"></i>
-                                                    <p>Armada</p>
-                                                </a>
-                                            </li>
-                                            <!-- stock spare part -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                                    <i class="fab fa-adn nav-icon"></i>
-                                                    <p>Spare Part</p>
-                                                </a>
-                                            </li>
-
-                                            <div class="dropdown-divider"></div>
-
-                                            <?php //} ?>
-
-                                            <?php //if ($this->ion_auth->in_group(array('piw', 'ssw'))) { ?>
-
-                                                <!-- klasifikasi akun -->
-                                                <li class="nav-item">
-                                                    <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                                        <i class="fab fa-adn nav-icon"></i>
-                                                        <p>Chart of Account</p>
-                                                    </a>
-                                                </li>
-
-                                                <!-- saldo awal -->
-                                                <li class="nav-item">
-                                                    <!-- <a href="<?php //echo site_url('saldo-awal'); ?>" class="nav-link <?php //echo ($this->uri->segment(1) == 'saldo-awal') ? 'active' : ''; ?>"> -->
-                                                    <a href="<?php echo site_url('input-tanggal-saldo-awal'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'input-tanggal-saldo-awal' or $this->uri->segment(1) == 'saldo-awal') ? 'active' : ''; ?>">
-                                                        <i class="fas fa-code-branch nav-icon"></i>
-                                                        <p>Saldo Awal</p>
-                                                    </a>
-                                                </li>
-                                                <!-- tgl. input saldo awal -->
-                                                <li class="nav-item">
-                                                    <a href="<?php echo site_url('tanggal-saldo-awal'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'tanggal-saldo-awal') ? 'active' : ''; ?>">
-                                                        <i class="fas fa-calendar-check nav-icon"></i>
-                                                        <p>Tgl. Input Saldo Awal</p>
-                                                    </a>
-                                                </li>
-                                                <!-- input price -->
-                                                <!-- <li class="nav-item">
-                                                    <a href="<?php echo site_url('package'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'package' ? 'active' : ''; ?>">
-                                                        <i class="fas fa-bed nav-icon"></i>
-                                                        <p>Package</p>
-                                                    </a>
-                                                </li> -->
-                                            <?php //} // if ($this->ion_auth->in_group(array('piw', 'ssw'))) { ?>
-                                        </ul>
                                     </li>
-                                    <!-- /setup -->
-                                <?php //} // if ($this->ion_auth->in_group('admin') or ($this->ion_auth->in_group('admin') and $this->ion_auth->in_group('piw')) or ($this->ion_auth->in_group('admin') and $this->ion_auth->in_group('ssw'))) {?>
+                                    <!-- user management -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('user-management'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'user-management' ? 'active' : ''; ?>">
+                                            <i class="fas fa-user-friends nav-icon"></i>
+                                            <p>User Management</p>
+                                        </a>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <!-- customer -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                            <i class="fab fa-adn nav-icon"></i>
+                                            <p>Customer</p>
+                                        </a>
+                                    </li>
+                                    <!-- shipper -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                            <i class="fab fa-adn nav-icon"></i>
+                                            <p>Shipper</p>
+                                        </a>
+                                    </li>
+                                    <!-- vendor -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                            <i class="fab fa-adn nav-icon"></i>
+                                            <p>Vendor</p>
+                                        </a>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <!-- armada -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                            <i class="fab fa-adn nav-icon"></i>
+                                            <p>Armada</p>
+                                        </a>
+                                    </li>
+                                    <!-- stock spare part -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                            <i class="fab fa-adn nav-icon"></i>
+                                            <p>Spare Part</p>
+                                        </a>
+                                    </li>
+                                    <div class="dropdown-divider"></div>
+                                    <!-- klasifikasi akun -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                            <i class="fab fa-adn nav-icon"></i>
+                                            <p>Chart of Account</p>
+                                        </a>
+                                    </li>
+                                    <!-- saldo awal -->
+                                    <li class="nav-item">
+                                        <!-- <a href="<?php //echo site_url('saldo-awal'); ?>" class="nav-link <?php //echo ($this->uri->segment(1) == 'saldo-awal') ? 'active' : ''; ?>"> -->
+                                        <a href="<?php echo site_url('input-tanggal-saldo-awal'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'input-tanggal-saldo-awal' or $this->uri->segment(1) == 'saldo-awal') ? 'active' : ''; ?>">
+                                            <i class="fas fa-code-branch nav-icon"></i>
+                                            <p>Saldo Awal</p>
+                                        </a>
+                                    </li>
+                                    <!-- tgl. input saldo awal -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('tanggal-saldo-awal'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'tanggal-saldo-awal') ? 'active' : ''; ?>">
+                                            <i class="fas fa-calendar-check nav-icon"></i>
+                                            <p>Tgl. Input Saldo Awal</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- /setup -->
 
-
-                                <?php //if ($this->ion_auth->in_group(array('piw', 'ssw'))) { ?>
-
-                                    <!-- transaksi -->
+                            <!-- transaksi -->
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-exchange-alt nav-icon"></i>
+                                    <p>TRANSAKSI<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <!-- Cost Sheet -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="far fa-building nav-icon"></i>
+                                            <p>Cost Sheet</p>
+                                        </a>
+                                    </li>
+                                    <!-- pembelian -->
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
                                             <i class="fas fa-exchange-alt nav-icon"></i>
-                                            <p>TRANSAKSI<i class="right fas fa-angle-left"></i></p>
+                                            <p>Pembelian<i class="right fas fa-angle-left"></i></p>
                                         </a>
                                         <ul class="nav nav-treeview">
-                                            <!-- Cost Sheet -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
-                                                    <p>Cost Sheet</p>
-                                                </a>
-                                            </li>
-                                            <!-- pembelian -->
-                                            <li class="nav-item has-treeview">
-                                                <a href="#" class="nav-link">
-                                                    <i class="fas fa-exchange-alt nav-icon"></i>
-                                                    <p>Pembelian<i class="right fas fa-angle-left"></i></p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                    <!-- aktiva tetap -->
-                                                    <li class="nav-item">
-                                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                            <i class="far fa-building nav-icon"></i>
-                                                            <p>Permintaan Pembelian (PR)</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
                                             <!-- aktiva tetap -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
                                                     <i class="far fa-building nav-icon"></i>
-                                                    <p>Aktiva Tetap</p>
-                                                </a>
-                                            </li>
-                                            <!-- Penjualan -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-cash-register nav-icon"></i>
-                                                    <p>Penjualan</p>
-                                                </a>
-                                            </li>
-                                            <!-- harga pokok -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-funnel-dollar nav-icon"></i>
-                                                    <p>Harga Pokok</p>
-                                                </a>
-                                            </li>
-                                            <!-- stok -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fab fa-nutritionix nav-icon"></i>
-                                                    <p>Stok</p>
-                                                </a>
-                                            </li>
-                                            <!-- kas / bank -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-money-check-alt nav-icon"></i>
-                                                    <p>Kas / Bank</p>
-                                                </a>
-                                            </li>
-                                            <!-- jurnal umum -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-newspaper nav-icon"></i>
-                                                    <p>Jurnal Umum</p>
+                                                    <p>Permintaan Pembelian (PR)</p>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <!-- /transaksi -->
-
-                                    <!-- proses -->
-                                    <li class="nav-item has-treeview
-                                        <?php
-                                        switch ($this->uri->segment(1)) {
-                                            case 'tamu':
-                                                echo 'menu-open';
-                                                break;
-                                            default:
-                                                echo '';
-                                        }
-                                        ?>
-                                        ">
-                                        <a href="#" class="nav-link">
-                                            <i class="fab fa-stack-overflow nav-icon"></i>
-                                            <p>PROSES<i class="right fas fa-angle-left"></i></p>
+                                    <!-- aktiva tetap -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="far fa-building nav-icon"></i>
+                                            <p>Aktiva Tetap</p>
                                         </a>
-                                        <ul class="nav nav-treeview">
-                                            <!-- posting -->
-                                            <!-- <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fab fa-ioxhost nav-icon"></i>
-                                                    <p>Posting</p>
-                                                </a>
-                                            </li> -->
-                                            <!-- input data tamu -->
-                                            <!-- <li class="nav-item">
-                                                <a href="<?php echo site_url('tamu'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'tamu' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-users nav-icon"></i>
-                                                    <p>Data Tamu</p>
-                                                </a>
-                                            </li> -->
-                                        </ul>
                                     </li>
-                                    <!-- /proses -->
-
-                                    <!-- laporan -->
-                                    <!-- <li class="nav-item has-treeview"> -->
-                                    <li class="nav-item has-treeview
-                                        <?php
-                                        switch ($this->uri->segment(1)) {
-                                            case 'buku-besar':
-                                                echo 'menu-open';
-                                                break;
-                                            default:
-                                                echo '';
-                                        }
-                                        ?>
-                                    ">
-                                        <a href="#" class="nav-link">
-                                            <i class="fas fa-scroll nav-icon"></i>
-                                            <p>LAPORAN<i class="right fas fa-angle-left"></i></p>
+                                    <!-- Penjualan -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-cash-register nav-icon"></i>
+                                            <p>Penjualan</p>
                                         </a>
-                                        <ul class="nav nav-treeview">
-                                            <!-- buku besar -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
-                                                    <i class="fab fa-accusoft nav-icon"></i>
-                                                    <p>Buku Besar</p>
-                                                </a>
-                                            </li>
-                                            <!-- neraca -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-balance-scale nav-icon"></i>
-                                                    <p>Neraca</p>
-                                                </a>
-                                            </li>
-                                            <!-- laba / rugi -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-file-invoice-dollar nav-icon"></i>
-                                                    <p>Laba / Rugi</p>
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </li>
-                                    <!-- /laporan -->
-
-                                    <!-- utility -->
-                                    <li class="nav-item has-treeview">
-                                        <a href="#" class="nav-link">
-                                            <i class="fas fa-tools nav-icon"></i>
-                                            <p>UTILITY<i class="right fas fa-angle-left"></i></p>
+                                    <!-- harga pokok -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-funnel-dollar nav-icon"></i>
+                                            <p>Harga Pokok</p>
                                         </a>
-                                        <ul class="nav nav-treeview">
-                                            <!-- backup -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-download nav-icon"></i>
-                                                    <p>Backup</p>
-                                                </a>
-                                            </li>
-                                            <!-- restore -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-upload nav-icon"></i>
-                                                    <p>Restore</p>
-                                                </a>
-                                            </li>
-                                            <!-- change password -->
-                                            <li class="nav-item">
-                                                <a href="<?php echo site_url('change-password'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'change-password' ? 'active' : ''; ?>">
-                                                    <i class="fas fa-key nav-icon"></i>
-                                                    <p>Change Password</p>
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </li>
-                                    <!-- /utility -->
+                                    <!-- stok -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fab fa-nutritionix nav-icon"></i>
+                                            <p>Stok</p>
+                                        </a>
+                                    </li>
+                                    <!-- kas / bank -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-money-check-alt nav-icon"></i>
+                                            <p>Kas / Bank</p>
+                                        </a>
+                                    </li>
+                                    <!-- jurnal umum -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="far fa-newspaper nav-icon"></i>
+                                            <p>Jurnal Umum</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- /transaksi -->
 
-                                <?php //} // if ($this->ion_auth->in_group(array('piw', 'ssw'))) {?>
+                            <!-- proses -->
+                            <li class="nav-item has-treeview
+                                <?php
+                                switch ($this->uri->segment(1)) {
+                                    case 'tamu':
+                                        echo 'menu-open';
+                                        break;
+                                    default:
+                                        echo '';
+                                }
+                                ?>
+                                ">
+                                <a href="#" class="nav-link">
+                                    <i class="fab fa-stack-overflow nav-icon"></i>
+                                    <p>PROSES<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <!-- posting -->
+                                    <!-- <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fab fa-ioxhost nav-icon"></i>
+                                            <p>Posting</p>
+                                        </a>
+                                    </li> -->
+                                    <!-- input data tamu -->
+                                    <!-- <li class="nav-item">
+                                        <a href="<?php echo site_url('tamu'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'tamu' ? 'active' : ''; ?>">
+                                            <i class="fas fa-users nav-icon"></i>
+                                            <p>Data Tamu</p>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                            </li>
+                            <!-- /proses -->
 
-                            <?php //}  // end if ($this->ion_auth->logged_in()) {  ?>
+                            <!-- laporan -->
+                            <!-- <li class="nav-item has-treeview"> -->
+                            <li class="nav-item has-treeview
+                                <?php
+                                switch ($this->uri->segment(1)) {
+                                    case 'buku-besar':
+                                        echo 'menu-open';
+                                        break;
+                                    default:
+                                        echo '';
+                                }
+                                ?>
+                            ">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-scroll nav-icon"></i>
+                                    <p>LAPORAN<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <!-- buku besar -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('buku-besar'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'buku-besar' ? 'active' : ''; ?>">
+                                            <i class="fab fa-accusoft nav-icon"></i>
+                                            <p>Buku Besar</p>
+                                        </a>
+                                    </li>
+                                    <!-- neraca -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-balance-scale nav-icon"></i>
+                                            <p>Neraca</p>
+                                        </a>
+                                    </li>
+                                    <!-- laba / rugi -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-file-invoice-dollar nav-icon"></i>
+                                            <p>Laba / Rugi</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- /laporan -->
+
+                            <!-- utility -->
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-tools nav-icon"></i>
+                                    <p>UTILITY<i class="right fas fa-angle-left"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <!-- backup -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-download nav-icon"></i>
+                                            <p>Backup</p>
+                                        </a>
+                                    </li>
+                                    <!-- restore -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                            <i class="fas fa-upload nav-icon"></i>
+                                            <p>Restore</p>
+                                        </a>
+                                    </li>
+                                    <!-- change password -->
+                                    <li class="nav-item">
+                                        <a href="<?php echo site_url('change-password'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'change-password' ? 'active' : ''; ?>">
+                                            <i class="fas fa-key nav-icon"></i>
+                                            <p>Change Password</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- /utility -->
 
                             <!-- Login or logout -->
                             <li class="nav-item">
