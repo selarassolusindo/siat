@@ -278,14 +278,14 @@
                             <!-- transaksi -->
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
-                                    <i class="fas fa-exchange-alt nav-icon"></i>
+                                    <i class="fas fa-calculator nav-icon"></i>
                                     <p>TRANSAKSI<i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <!-- Cost Sheet -->
                                     <li class="nav-item">
                                         <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                            <i class="far fa-building nav-icon"></i>
+                                            <i class="far fa-copy nav-icon"></i>
                                             <p>Cost Sheet</p>
                                         </a>
                                     </li>
@@ -293,7 +293,7 @@
                                     <!-- pembelian -->
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
-                                            <i class="fas fa-exchange-alt nav-icon"></i>
+                                            <i class="fas fa-shopping-cart nav-icon"></i>
                                             <p>Pembelian<i class="right fas fa-angle-left"></i></p>
                                         </a>
                                         <ul class="nav nav-treeview">
@@ -354,7 +354,7 @@
                                     <!-- Penjualan -->
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
-                                            <i class="fas fa-exchange-alt nav-icon"></i>
+                                            <i class="fas fa-chart-line nav-icon"></i>
                                             <p>Penjualan<i class="right fas fa-angle-left"></i></p>
                                         </a>
                                         <ul class="nav nav-treeview">
@@ -415,7 +415,7 @@
                                     <!-- Kas / Bank -->
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
-                                            <i class="fas fa-exchange-alt nav-icon"></i>
+                                            <i class="fas fa-money-check nav-icon"></i>
                                             <p>Kas / Bank<i class="right fas fa-angle-left"></i></p>
                                         </a>
                                         <ul class="nav nav-treeview">
@@ -439,7 +439,7 @@
                                     <!-- Perbaikan Armada -->
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
-                                            <i class="fas fa-exchange-alt nav-icon"></i>
+                                            <i class="fas fa-hammer nav-icon"></i>
                                             <p>Perbaikan Armada<i class="right fas fa-angle-left"></i></p>
                                         </a>
                                         <ul class="nav nav-treeview">
