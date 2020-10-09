@@ -307,6 +307,29 @@
                                             <p>TRANSAKSI<i class="right fas fa-angle-left"></i></p>
                                         </a>
                                         <ul class="nav nav-treeview">
+                                            <!-- Cost Sheet -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Cost Sheet</p>
+                                                </a>
+                                            </li>
+                                            <!-- pembelian -->
+                                            <li class="nav-item has-treeview">
+                                                <a href="#" class="nav-link">
+                                                    <i class="fas fa-exchange-alt nav-icon"></i>
+                                                    <p>Pembelian<i class="right fas fa-angle-left"></i></p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                    <!-- aktiva tetap -->
+                                                    <li class="nav-item">
+                                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                            <i class="far fa-building nav-icon"></i>
+                                                            <p>Permintaan Pembelian (PR)</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                             <!-- aktiva tetap -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
