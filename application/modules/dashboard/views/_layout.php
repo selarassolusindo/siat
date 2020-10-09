@@ -170,6 +170,7 @@
                             </li>
                             <!-- /dashboard -->
 
+
                             <li class="nav-item">
                                 <a href="pages/widgets.html" class="nav-link">
                                     <i class="nav-icon fas fa-th"></i>
@@ -179,6 +180,7 @@
                                     </p>
                                 </a>
                             </li>
+
                             <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-copy"></i>
@@ -234,24 +236,20 @@
                                 </ul>
                             </li>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            <!-- Login or logout -->
+                            <li class="nav-item">
+                                <?php if ($this->session->userdata('user_id') != "") { ?>
+                                    <a href="<?php echo site_url('auth/logout'); ?>" class="nav-link">
+                                        <i class="fas fa-sign-out-alt nav-icon"></i>
+                                        <p>LOGOUT</p>
+                                    </a>
+                                <?php } else { ?>
+                                    <a href="<?php echo site_url('auth/login'); ?>" class="nav-link">
+                                        <i class="fas fa-sign-in-alt nav-icon"></i>
+                                        <p>LOGIN</p>
+                                    </a>
+                                <?php }?>
+                            </li>
 
                         </ul>
                     </nav>
