@@ -446,14 +446,14 @@
                                             <!-- Kas/Bank Masuk & Keluar -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-building nav-icon"></i>
+                                                    <i class="far fa-edit nav-icon"></i>
                                                     <p>Permintaan Perbaikan</p>
                                                 </a>
                                             </li>
                                             <!-- Pembayaran Perbaikan -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                                    <i class="far fa-newspaper nav-icon"></i>
+                                                    <i class="fas fa-hand-holding-usd nav-icon"></i>
                                                     <p>Pembayaran Perbaikan</p>
                                                 </a>
                                             </li>
