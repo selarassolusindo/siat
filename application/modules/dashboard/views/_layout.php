@@ -289,6 +289,7 @@
                                             <p>Cost Sheet</p>
                                         </a>
                                     </li>
+
                                     <!-- pembelian -->
                                     <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
@@ -296,56 +297,167 @@
                                             <p>Pembelian<i class="right fas fa-angle-left"></i></p>
                                         </a>
                                         <ul class="nav nav-treeview">
-                                            <!-- aktiva tetap -->
+                                            <!-- Permintaan Pembelian (PR) -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
                                                     <i class="far fa-building nav-icon"></i>
                                                     <p>Permintaan Pembelian (PR)</p>
                                                 </a>
                                             </li>
+                                            <!-- Pesanan Pembelian (SO) -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Pesanan Pembelian (PO)</p>
+                                                </a>
+                                            </li>
+                                            <!-- Penerimaan Barang -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Penerimaan Barang</p>
+                                                </a>
+                                            </li>
+                                            <!-- Retur Pembelian -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Retur Pembelian</p>
+                                                </a>
+                                            </li>
+                                            <!-- Hutang Vendor -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Hutang Vendor</p>
+                                                </a>
+                                            </li>
+                                            <!-- Pembelian Langsung -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Pembelian Langsung</p>
+                                                </a>
+                                            </li>
+                                            <!-- Pembayaran Langsung -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Pembayaran Langsung</p>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <!-- aktiva tetap -->
-                                    <li class="nav-item">
-                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                            <i class="far fa-building nav-icon"></i>
-                                            <p>Aktiva Tetap</p>
-                                        </a>
-                                    </li>
+
+                                    <!-- <div class="dropdown-divider"></div> -->
+
                                     <!-- Penjualan -->
-                                    <li class="nav-item">
-                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                            <i class="fas fa-cash-register nav-icon"></i>
-                                            <p>Penjualan</p>
+                                    <li class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="fas fa-exchange-alt nav-icon"></i>
+                                            <p>Penjualan<i class="right fas fa-angle-left"></i></p>
                                         </a>
+                                        <ul class="nav nav-treeview">
+                                            <!-- Pesanan Penjualan (SO) -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Pesanan Penjualan (SO)</p>
+                                                </a>
+                                            </li>
+                                            <!-- Uang Jalan / Kas Bon -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Uang Jalan / Kas Bon</p>
+                                                </a>
+                                            </li>
+                                            <!-- Validasi Uang Jalan -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Validasi Uang Jalan</p>
+                                                </a>
+                                            </li>
+                                            <!-- Invoice Trucking -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Invoice Trucking</p>
+                                                </a>
+                                            </li>
+                                            <!-- Nota Debit -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Nota Debit</p>
+                                                </a>
+                                            </li>
+                                            <!-- Piutang Customer -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Piutang Customer</p>
+                                                </a>
+                                            </li>
+                                            <!-- Pembayaran Piutang -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Pembayaran Piutang</p>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <!-- harga pokok -->
-                                    <li class="nav-item">
-                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                            <i class="fas fa-funnel-dollar nav-icon"></i>
-                                            <p>Harga Pokok</p>
+
+                                    <!-- <div class="dropdown-divider"></div> -->
+
+                                    <!-- Kas / Bank -->
+                                    <li class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="fas fa-exchange-alt nav-icon"></i>
+                                            <p>Kas / Bank<i class="right fas fa-angle-left"></i></p>
                                         </a>
+                                        <ul class="nav nav-treeview">
+                                            <!-- Kas/Bank Masuk & Keluar -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Kas/Bank Masuk & Keluar</p>
+                                                </a>
+                                            </li>
+                                            <!-- jurnal umum -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-newspaper nav-icon"></i>
+                                                    <p>Jurnal Umum</p>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <!-- stok -->
-                                    <li class="nav-item">
-                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                            <i class="fab fa-nutritionix nav-icon"></i>
-                                            <p>Stok</p>
+
+                                    <!-- Perbaikan Armada -->
+                                    <li class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="fas fa-exchange-alt nav-icon"></i>
+                                            <p>Perbaikan Armada<i class="right fas fa-angle-left"></i></p>
                                         </a>
-                                    </li>
-                                    <!-- kas / bank -->
-                                    <li class="nav-item">
-                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                            <i class="fas fa-money-check-alt nav-icon"></i>
-                                            <p>Kas / Bank</p>
-                                        </a>
-                                    </li>
-                                    <!-- jurnal umum -->
-                                    <li class="nav-item">
-                                        <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
-                                            <i class="far fa-newspaper nav-icon"></i>
-                                            <p>Jurnal Umum</p>
-                                        </a>
+                                        <ul class="nav nav-treeview">
+                                            <!-- Kas/Bank Masuk & Keluar -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-building nav-icon"></i>
+                                                    <p>Permintaan Perbaikan</p>
+                                                </a>
+                                            </li>
+                                            <!-- Pembayaran Perbaikan -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                    <i class="far fa-newspaper nav-icon"></i>
+                                                    <p>Pembayaran Perbaikan</p>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </li>
