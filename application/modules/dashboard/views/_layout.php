@@ -203,10 +203,9 @@
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('company'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'company' ? 'active' : ''; ?>">
                                                     <i class="fas fa-door-open nav-icon"></i>
-                                                    <p>Perusahaan</p>
+                                                    <p>Company</p>
                                                 </a>
                                             </li>
-                                            <?php //} ?>
                                             <!-- user management -->
                                             <li class="nav-item">
                                                 <a href="<?php echo site_url('user-management'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'user-management' ? 'active' : ''; ?>">
@@ -214,21 +213,62 @@
                                                     <p>User Management</p>
                                                 </a>
                                             </li>
+
+                                            <div class="dropdown-divider"></div>
+
+                                            <!-- customer -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                                    <i class="fab fa-adn nav-icon"></i>
+                                                    <p>Customer</p>
+                                                </a>
+                                            </li>
+                                            <!-- shipper -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                                    <i class="fab fa-adn nav-icon"></i>
+                                                    <p>Shipper</p>
+                                                </a>
+                                            </li>
+                                            <!-- vendor -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                                    <i class="fab fa-adn nav-icon"></i>
+                                                    <p>Vendor</p>
+                                                </a>
+                                            </li>
+
+                                            <div class="dropdown-divider"></div>
+
+                                            <!-- armada -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                                    <i class="fab fa-adn nav-icon"></i>
+                                                    <p>Armada</p>
+                                                </a>
+                                            </li>
+                                            <!-- stock spare part -->
+                                            <li class="nav-item">
+                                                <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                                    <i class="fab fa-adn nav-icon"></i>
+                                                    <p>Spare Part</p>
+                                                </a>
+                                            </li>
+
+                                            <div class="dropdown-divider"></div>
+
+                                            <?php //} ?>
+
                                             <?php //if ($this->ion_auth->in_group(array('piw', 'ssw'))) { ?>
+
                                                 <!-- klasifikasi akun -->
                                                 <li class="nav-item">
                                                     <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
                                                         <i class="fab fa-adn nav-icon"></i>
-                                                        <p>Klasifikasi Akun</p>
+                                                        <p>Chart of Account</p>
                                                     </a>
                                                 </li>
-                                                <!-- klasak 2 -->
-                                                <li class="nav-item">
-                                                    <a href="<?php echo site_url('akun2'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun2') ? 'active' : ''; ?>">
-                                                        <i class="fab fa-adn nav-icon"></i>
-                                                        <p>Klasifikasi Akun #2</p>
-                                                    </a>
-                                                </li>
+
                                                 <!-- saldo awal -->
                                                 <li class="nav-item">
                                                     <!-- <a href="<?php //echo site_url('saldo-awal'); ?>" class="nav-link <?php //echo ($this->uri->segment(1) == 'saldo-awal') ? 'active' : ''; ?>"> -->
