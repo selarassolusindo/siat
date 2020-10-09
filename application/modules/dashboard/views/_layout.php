@@ -193,7 +193,7 @@
                                 ?>
                             ">
                                 <a href="#" class="nav-link">
-                                    <i class="fas fa-coins nav-icon"></i>
+                                    <i class="fab fa-buffer nav-icon"></i>
                                     <p>SETUP<i class="right fas fa-angle-left"></i></p>
                                 </a>
                                 <ul class="nav nav-treeview">
@@ -215,7 +215,7 @@
                                     <!-- customer -->
                                     <li class="nav-item">
                                         <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
-                                            <i class="fab fa-adn nav-icon"></i>
+                                            <i class="fas fa-hands-helping nav-icon"></i>
                                             <p>Customer</p>
                                         </a>
                                     </li>
