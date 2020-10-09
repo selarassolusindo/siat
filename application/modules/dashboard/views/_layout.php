@@ -258,7 +258,7 @@
                                 <?php //} // if ($this->ion_auth->in_group('admin') or ($this->ion_auth->in_group('admin') and $this->ion_auth->in_group('piw')) or ($this->ion_auth->in_group('admin') and $this->ion_auth->in_group('ssw'))) {?>
 
 
-                                <?php if ($this->ion_auth->in_group(array('piw', 'ssw'))) { ?>
+                                <?php //if ($this->ion_auth->in_group(array('piw', 'ssw'))) { ?>
 
                                     <!-- transaksi -->
                                     <li class="nav-item has-treeview">
@@ -423,7 +423,7 @@
                                     </li>
                                     <!-- /utility -->
 
-                                <?php } // if ($this->ion_auth->in_group(array('piw', 'ssw'))) {?>
+                                <?php //} // if ($this->ion_auth->in_group(array('piw', 'ssw'))) {?>
 
                             <?php //}  // end if ($this->ion_auth->logged_in()) {  ?>
 
