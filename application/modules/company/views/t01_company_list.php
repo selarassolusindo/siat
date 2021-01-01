@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
     <head>
         <title>harviacode.com - codeigniter crud generator</title>
@@ -10,7 +10,7 @@
         </style>
     </head>
     <body>
-        <h2 style="margin-top:0px">T01_company List</h2>
+        <h2 style="margin-top:0px">T01_company List</h2> -->
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
                 <?php echo anchor(site_url('company/create'),'Create', 'class="btn btn-primary"'); ?>
@@ -27,7 +27,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
                         <span class="input-group-btn">
-                            <?php 
+                            <?php
                                 if ($q <> '')
                                 {
                                     ?>
@@ -48,8 +48,8 @@
 		<th>Alamat</th>
 		<th>Kota</th>
 		<th>Group Kode</th>
-		<th>Created At</th>
-		<th>Updated At</th>
+		<!-- <th>Created At</th>
+		<th>Updated At</th> -->
 		<th>Action</th>
             </tr><?php
             foreach ($company_data as $company)
@@ -61,15 +61,15 @@
 			<td><?php echo $company->Alamat ?></td>
 			<td><?php echo $company->Kota ?></td>
 			<td><?php echo $company->Group_Kode ?></td>
-			<td><?php echo $company->created_at ?></td>
-			<td><?php echo $company->updated_at ?></td>
+			<!-- <td><?php echo $company->created_at ?></td>
+			<td><?php echo $company->updated_at ?></td> -->
 			<td style="text-align:center" width="200px">
-				<?php 
-				echo anchor(site_url('company/read/'.$company->idcompany),'Read'); 
-				echo ' | '; 
-				echo anchor(site_url('company/update/'.$company->idcompany),'Update'); 
-				echo ' | '; 
-				echo anchor(site_url('company/delete/'.$company->idcompany),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				<?php
+				echo anchor(site_url('company/read/'.$company->idcompany),'Read');
+				echo ' | ';
+				echo anchor(site_url('company/update/'.$company->idcompany),'Update');
+				echo ' | ';
+				echo anchor(site_url('company/delete/'.$company->idcompany),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
 				?>
 			</td>
 		</tr>
@@ -87,5 +87,5 @@
                 <?php echo $pagination ?>
             </div>
         </div>
-    </body>
-</html>
+    <!-- </body>
+</html> -->

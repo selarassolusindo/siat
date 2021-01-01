@@ -16,7 +16,7 @@ class Company extends CI_Controller
     {
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
-        
+
         if ($q <> '') {
             $config['base_url'] = base_url() . 'company/index.html?q=' . urlencode($q);
             $config['first_url'] = base_url() . 'company/index.html?q=' . urlencode($q);
@@ -40,10 +40,13 @@ class Company extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('company/t01_company_list', $data);
+        // $this->load->view('company/t01_company_list', $data);
+        $data['_view'] = 'company/t01_company_list';
+        $data['_caption'] = 'Company';
+        $this->load->view('dashboard/_layout', $data);
     }
 
-    public function read($id) 
+    public function read($id)
     {
         $row = $this->Company_model->get_by_id($id);
         if ($row) {
@@ -63,7 +66,7 @@ class Company extends CI_Controller
         }
     }
 
-    public function create() 
+    public function create()
     {
         $data = array(
             'button' => 'Create',
@@ -78,8 +81,8 @@ class Company extends CI_Controller
 	);
         $this->load->view('company/t01_company_form', $data);
     }
-    
-    public function create_action() 
+
+    public function create_action()
     {
         $this->_rules();
 
@@ -100,8 +103,8 @@ class Company extends CI_Controller
             redirect(site_url('company'));
         }
     }
-    
-    public function update($id) 
+
+    public function update($id)
     {
         $row = $this->Company_model->get_by_id($id);
 
@@ -123,8 +126,8 @@ class Company extends CI_Controller
             redirect(site_url('company'));
         }
     }
-    
-    public function update_action() 
+
+    public function update_action()
     {
         $this->_rules();
 
@@ -145,8 +148,8 @@ class Company extends CI_Controller
             redirect(site_url('company'));
         }
     }
-    
-    public function delete($id) 
+
+    public function delete($id)
     {
         $row = $this->Company_model->get_by_id($id);
 
@@ -160,7 +163,7 @@ class Company extends CI_Controller
         }
     }
 
-    public function _rules() 
+    public function _rules()
     {
 	$this->form_validation->set_rules('Nama', 'nama', 'trim|required');
 	$this->form_validation->set_rules('Alamat', 'alamat', 'trim|required');
@@ -231,7 +234,7 @@ class Company extends CI_Controller
             't01_company_data' => $this->Company_model->get_all(),
             'start' => 0
         );
-        
+
         $this->load->view('company/t01_company_doc',$data);
     }
 
