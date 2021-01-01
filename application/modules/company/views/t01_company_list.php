@@ -80,6 +80,8 @@
         <div class="row">
             <div class="col-md-6">
                 <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
+		<?php echo anchor(site_url('company/excel'), 'Excel', 'class="btn btn-primary"'); ?>
+		<?php echo anchor(site_url('company/word'), 'Word', 'class="btn btn-primary"'); ?>
 	    </div>
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>
