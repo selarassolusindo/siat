@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
     <head>
         <title>harviacode.com - codeigniter crud generator</title>
@@ -10,7 +10,7 @@
         </style>
     </head>
     <body>
-        <h2 style="margin-top:0px">T02_customer <?php echo $button ?></h2>
+        <h2 style="margin-top:0px">T02_customer <?php echo $button ?></h2> -->
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
             <label for="varchar">Kode <?php echo form_error('Kode') ?></label>
@@ -28,17 +28,17 @@
             <label for="varchar">Kota <?php echo form_error('Kota') ?></label>
             <input type="text" class="form-control" name="Kota" id="Kota" placeholder="Kota" value="<?php echo $Kota; ?>" />
         </div>
-	    <div class="form-group">
+	    <!-- <div class="form-group">
             <label for="timestamp">Created At <?php echo form_error('created_at') ?></label>
             <input type="text" class="form-control" name="created_at" id="created_at" placeholder="Created At" value="<?php echo $created_at; ?>" />
         </div>
 	    <div class="form-group">
             <label for="timestamp">Updated At <?php echo form_error('updated_at') ?></label>
             <input type="text" class="form-control" name="updated_at" id="updated_at" placeholder="Updated At" value="<?php echo $updated_at; ?>" />
-        </div>
-	    <input type="hidden" name="idcustomer" value="<?php echo $idcustomer; ?>" /> 
-	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
+        </div> -->
+	    <input type="hidden" name="idcustomer" value="<?php echo $idcustomer; ?>" />
+	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button>
 	    <a href="<?php echo site_url('customer') ?>" class="btn btn-default">Cancel</a>
 	</form>
-    </body>
-</html>
+    <!-- </body>
+</html> -->
