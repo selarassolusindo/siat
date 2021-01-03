@@ -41,7 +41,7 @@ class Customer extends CI_Controller
             'start' => $start,
         );
         // $this->load->view('customer/t02_customer_list', $data);
-        $data['_view'] = 'customer/t01_customer_list';
+        $data['_view'] = 'customer/t02_customer_list';
         $data['_caption'] = 'Customer';
         $this->load->view('dashboard/_layout', $data);
     }
@@ -60,7 +60,7 @@ class Customer extends CI_Controller
 		// 'updated_at' => $row->updated_at,
 	    );
             // $this->load->view('customer/t02_customer_read', $data);
-            $data['_view'] = 'customer/t01_customer_read';
+            $data['_view'] = 'customer/t02_customer_read';
             $data['_caption'] = 'Customer';
             $this->load->view('dashboard/_layout', $data);
         } else {
@@ -83,7 +83,7 @@ class Customer extends CI_Controller
 	    // 'updated_at' => set_value('updated_at'),
 	);
         // $this->load->view('customer/t02_customer_form', $data);
-        $data['_view'] = 'customer/t01_customer_form';
+        $data['_view'] = 'customer/t02_customer_form';
         $data['_caption'] = 'Customer';
         $this->load->view('dashboard/_layout', $data);
     }
@@ -127,7 +127,7 @@ class Customer extends CI_Controller
 		// 'updated_at' => set_value('updated_at', $row->updated_at),
 	    );
             // $this->load->view('customer/t02_customer_form', $data);
-            $data['_view'] = 'customer/t01_customer_form';
+            $data['_view'] = 'customer/t02_customer_form';
             $data['_caption'] = 'Customer';
             $this->load->view('dashboard/_layout', $data);
         } else {
