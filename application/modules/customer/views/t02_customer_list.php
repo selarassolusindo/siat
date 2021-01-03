@@ -1,4 +1,4 @@
-<!-- <!doctype html>
+<!doctype html>
 <html>
     <head>
         <title>harviacode.com - codeigniter crud generator</title>
@@ -10,10 +10,10 @@
         </style>
     </head>
     <body>
-        <h2 style="margin-top:0px">T01_company List</h2> -->
+        <h2 style="margin-top:0px">T02_customer List</h2>
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
-                <?php echo anchor(site_url('company/create'),'Create', 'class="btn btn-primary"'); ?>
+                <?php echo anchor(site_url('customer/create'),'Create', 'class="btn btn-primary"'); ?>
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
@@ -23,15 +23,15 @@
             <div class="col-md-1 text-right">
             </div>
             <div class="col-md-3 text-right">
-                <form action="<?php echo site_url('company/index'); ?>" class="form-inline" method="get">
+                <form action="<?php echo site_url('customer/index'); ?>" class="form-inline" method="get">
                     <div class="input-group">
                         <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
                         <span class="input-group-btn">
-                            <?php
+                            <?php 
                                 if ($q <> '')
                                 {
                                     ?>
-                                    <a href="<?php echo site_url('company'); ?>" class="btn btn-default">Reset</a>
+                                    <a href="<?php echo site_url('customer'); ?>" class="btn btn-default">Reset</a>
                                     <?php
                                 }
                             ?>
@@ -44,32 +44,32 @@
         <table class="table table-bordered" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
+		<th>Kode</th>
 		<th>Nama</th>
 		<th>Alamat</th>
 		<th>Kota</th>
-		<!-- <th>Group Kode</th> -->
-		<!-- <th>Created At</th>
-		<th>Updated At</th> -->
+		<th>Created At</th>
+		<th>Updated At</th>
 		<th>Action</th>
             </tr><?php
-            foreach ($company_data as $company)
+            foreach ($customer_data as $customer)
             {
                 ?>
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
-			<td><?php echo $company->Nama ?></td>
-			<td><?php echo $company->Alamat ?></td>
-			<td><?php echo $company->Kota ?></td>
-			<!-- <td><?php echo $company->Group_Kode ?></td> -->
-			<!-- <td><?php echo $company->created_at ?></td>
-			<td><?php echo $company->updated_at ?></td> -->
+			<td><?php echo $customer->Kode ?></td>
+			<td><?php echo $customer->Nama ?></td>
+			<td><?php echo $customer->Alamat ?></td>
+			<td><?php echo $customer->Kota ?></td>
+			<td><?php echo $customer->created_at ?></td>
+			<td><?php echo $customer->updated_at ?></td>
 			<td style="text-align:center" width="200px">
-				<?php
-				echo anchor(site_url('company/read/'.$company->idcompany),'Read');
-				echo ' | ';
-				echo anchor(site_url('company/update/'.$company->idcompany),'Update');
-				echo ' | ';
-				echo anchor(site_url('company/delete/'.$company->idcompany),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+				<?php 
+				echo anchor(site_url('customer/read/'.$customer->idcustomer),'Read'); 
+				echo ' | '; 
+				echo anchor(site_url('customer/update/'.$customer->idcustomer),'Update'); 
+				echo ' | '; 
+				echo anchor(site_url('customer/delete/'.$customer->idcustomer),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
 				?>
 			</td>
 		</tr>
@@ -80,12 +80,12 @@
         <div class="row">
             <div class="col-md-6">
                 <a href="#" class="btn btn-primary">Total Record : <?php echo $total_rows ?></a>
-		<?php echo anchor(site_url('company/excel'), 'Excel', 'class="btn btn-primary"'); ?>
-		<?php echo anchor(site_url('company/word'), 'Word', 'class="btn btn-primary"'); ?>
+		<?php echo anchor(site_url('customer/excel'), 'Excel', 'class="btn btn-primary"'); ?>
+		<?php echo anchor(site_url('customer/word'), 'Word', 'class="btn btn-primary"'); ?>
 	    </div>
             <div class="col-md-6 text-right">
                 <?php echo $pagination ?>
             </div>
         </div>
-    <!-- </body>
-</html> -->
+    </body>
+</html>
