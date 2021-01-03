@@ -179,7 +179,7 @@
                                 switch ($this->uri->segment(1)) {
                                     case 'company':
                                     case 'user-management':
-                                    case 'akun':
+                                    case 'customer':
                                     case 'akun2':
                                     case 'input-tanggal-saldo-awal':
                                     case 'tanggal-saldo-awal':
@@ -214,7 +214,7 @@
                                     <div class="dropdown-divider"></div>
                                     <!-- customer -->
                                     <li class="nav-item">
-                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                        <a href="<?php echo site_url('customer'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'customer') ? 'active' : ''; ?>">
                                             <i class="fas fa-hands-helping nav-icon"></i>
                                             <p>Customer</p>
                                         </a>
