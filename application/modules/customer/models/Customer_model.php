@@ -28,7 +28,7 @@ class Customer_model extends CI_Model
         $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
     }
-    
+
     // get total rows
     function total_rows($q = NULL) {
         $this->db->like('idcustomer', $q);
@@ -74,6 +74,41 @@ class Customer_model extends CI_Model
     {
         $this->db->where($this->id, $id);
         $this->db->delete($this->table);
+    }
+
+    /**
+     * get new Kode Customer
+     */
+    function getNewKode($idcustomer)
+    {
+        $row = $this->get_by_id($idcustomer);
+        // $kode = $row->Kode;
+        // $lenKode = strlen($row->Kode);
+        $this->db->order_by('Kode', 'desc');
+        $this->db->limit(1);
+        $row = $this->db->get($this->table)->row();
+        if ($row) {
+            /**
+             * data yang dicari :: ditemukan
+             */
+            $value = $row->Kode;
+            // $sLastKode = intval(substr($value, 3, 3)); // ambil 3 digit terakhir
+            $sLastKode = intval(substr($value, 1, 4)); // ambil 4 digit terakhir
+            $sLastKode = intval($sLastKode) + 1; // konversi ke integer, lalu tambahkan satu
+            $sNextKode = "C" . sprintf('%04s', $sLastKode); // format hasilnya dan tambahkan prefix
+            if (strlen($sNextKode) > 5) {
+                $sNextKode = "C9999";
+            }
+        } else {
+            /**
+             * data yang dicari :: tidak ditemukan, maka
+             * kode-induk + 1   => untuk level 2
+             *            + 01  => untuk level 3
+             *            + 001 = > untuk level 4 dan 5
+             */
+            $sNextKode = "C0001";
+        }
+        return $sNextKode;
     }
 
 }
