@@ -181,6 +181,7 @@
                                     case 'user-management':
                                     case 'customer':
                                     case 'shipper':
+                                    case 'vendor':
                                     case 'input-tanggal-saldo-awal':
                                     case 'tanggal-saldo-awal':
                                     case 'saldo-awal':
@@ -228,7 +229,7 @@
                                     </li>
                                     <!-- vendor -->
                                     <li class="nav-item">
-                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                        <a href="<?php echo site_url('vendor'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'vendor') ? 'active' : ''; ?>">
                                             <i class="fas fa-user-tie nav-icon"></i>
                                             <p>Vendor</p>
                                         </a>
