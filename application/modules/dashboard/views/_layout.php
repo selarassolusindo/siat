@@ -182,6 +182,7 @@
                                     case 'customer':
                                     case 'shipper':
                                     case 'vendor1':
+                                    case 'armada':
                                     case 'input-tanggal-saldo-awal':
                                     case 'tanggal-saldo-awal':
                                     case 'saldo-awal':
@@ -237,7 +238,7 @@
                                     <div class="dropdown-divider"></div>
                                     <!-- armada -->
                                     <li class="nav-item">
-                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                        <a href="<?php echo site_url('armada'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'armada') ? 'active' : ''; ?>">
                                             <i class="fas fa-truck-moving nav-icon"></i>
                                             <p>Armada</p>
                                         </a>
