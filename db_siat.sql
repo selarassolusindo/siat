@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 22, 2020 at 05:22 AM
+-- Host: localhost
+-- Generation Time: Jan 10, 2021 at 09:22 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -53,6 +53,122 @@ CREATE TABLE `login_attempts` (
   `login` varchar(100) NOT NULL,
   `time` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t01_company`
+--
+
+CREATE TABLE `t01_company` (
+  `idcompany` int(11) NOT NULL,
+  `Nama` varchar(50) NOT NULL,
+  `Alamat` varchar(50) NOT NULL,
+  `Kota` varchar(50) NOT NULL,
+  `Group_Kode` varchar(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t01_company`
+--
+
+INSERT INTO `t01_company` (`idcompany`, `Nama`, `Alamat`, `Kota`, `Group_Kode`, `created_at`, `updated_at`) VALUES
+(1, 'PT LTS', 'Andhika Plaza', 'Surabaya', 'LTS', '2021-01-02 11:39:38', '2021-01-02 11:40:06');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t02_customer`
+--
+
+CREATE TABLE `t02_customer` (
+  `idcustomer` int(11) NOT NULL,
+  `Kode` varchar(5) NOT NULL,
+  `Nama` varchar(50) NOT NULL,
+  `Alamat` varchar(50) NOT NULL,
+  `Kota` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t02_customer`
+--
+
+INSERT INTO `t02_customer` (`idcustomer`, `Kode`, `Nama`, `Alamat`, `Kota`, `created_at`, `updated_at`) VALUES
+(1, 'C0001', 'Cus1', 'Ala1', 'Kot1', '2021-01-03 15:38:53', '2021-01-03 15:38:53');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t03_shipper`
+--
+
+CREATE TABLE `t03_shipper` (
+  `idshipper` int(11) NOT NULL,
+  `Kode` varchar(5) NOT NULL,
+  `Nama` varchar(50) NOT NULL,
+  `Alamat` varchar(50) NOT NULL,
+  `Kota` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t03_shipper`
+--
+
+INSERT INTO `t03_shipper` (`idshipper`, `Kode`, `Nama`, `Alamat`, `Kota`, `created_at`, `updated_at`) VALUES
+(1, 'S0001', 'Nam1', 'Ala1', 'Kot1', '2021-01-03 17:23:27', '2021-01-03 17:23:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t04_vendor`
+--
+
+CREATE TABLE `t04_vendor` (
+  `idvendor` int(11) NOT NULL,
+  `Kode` varchar(5) NOT NULL,
+  `Nama` varchar(50) NOT NULL,
+  `Alamat` varchar(50) NOT NULL,
+  `Kota` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t04_vendor`
+--
+
+INSERT INTO `t04_vendor` (`idvendor`, `Kode`, `Nama`, `Alamat`, `Kota`, `created_at`, `updated_at`) VALUES
+(1, 'V0001', 'Ven1xy', 'Ala1xy', 'Kot1xy', '2021-01-09 05:48:18', '2021-01-09 12:24:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t05_armada`
+--
+
+CREATE TABLE `t05_armada` (
+  `idarmada` int(11) NOT NULL,
+  `Kode` varchar(5) NOT NULL,
+  `Merk` varchar(50) NOT NULL,
+  `Nopol` varchar(15) NOT NULL,
+  `Norangka` varchar(50) NOT NULL,
+  `Nomesin` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t05_armada`
+--
+
+INSERT INTO `t05_armada` (`idarmada`, `Kode`, `Merk`, `Nopol`, `Norangka`, `Nomesin`, `created_at`, `updated_at`) VALUES
+(1, 'A0001', 'Mer1x', 'Nop1y', 'Nor1z', 'Nom1a', '2021-01-10 14:19:59', '2021-01-10 14:20:12');
 
 -- --------------------------------------------------------
 
@@ -126,6 +242,36 @@ ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `t01_company`
+--
+ALTER TABLE `t01_company`
+  ADD PRIMARY KEY (`idcompany`);
+
+--
+-- Indexes for table `t02_customer`
+--
+ALTER TABLE `t02_customer`
+  ADD PRIMARY KEY (`idcustomer`);
+
+--
+-- Indexes for table `t03_shipper`
+--
+ALTER TABLE `t03_shipper`
+  ADD PRIMARY KEY (`idshipper`) USING BTREE;
+
+--
+-- Indexes for table `t04_vendor`
+--
+ALTER TABLE `t04_vendor`
+  ADD PRIMARY KEY (`idvendor`) USING BTREE;
+
+--
+-- Indexes for table `t05_armada`
+--
+ALTER TABLE `t05_armada`
+  ADD PRIMARY KEY (`idarmada`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -159,6 +305,36 @@ ALTER TABLE `groups`
 --
 ALTER TABLE `login_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `t01_company`
+--
+ALTER TABLE `t01_company`
+  MODIFY `idcompany` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `t02_customer`
+--
+ALTER TABLE `t02_customer`
+  MODIFY `idcustomer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `t03_shipper`
+--
+ALTER TABLE `t03_shipper`
+  MODIFY `idshipper` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `t04_vendor`
+--
+ALTER TABLE `t04_vendor`
+  MODIFY `idvendor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `t05_armada`
+--
+ALTER TABLE `t05_armada`
+  MODIFY `idarmada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
