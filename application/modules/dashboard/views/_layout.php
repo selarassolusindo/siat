@@ -181,7 +181,7 @@
                                     case 'user-management':
                                     case 'customer':
                                     case 'shipper':
-                                    case 'vendor':
+                                    case 'vendor1':
                                     case 'input-tanggal-saldo-awal':
                                     case 'tanggal-saldo-awal':
                                     case 'saldo-awal':
@@ -229,7 +229,7 @@
                                     </li>
                                     <!-- vendor -->
                                     <li class="nav-item">
-                                        <a href="<?php echo site_url('vendor'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'vendor') ? 'active' : ''; ?>">
+                                        <a href="<?php echo site_url('vendor1'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'vendor1') ? 'active' : ''; ?>">
                                             <i class="fas fa-user-tie nav-icon"></i>
                                             <p>Vendor</p>
                                         </a>
@@ -608,12 +608,37 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1 class="m-0 text-dark">Dashboard</h1>
+                                <!-- <h1 class="m-0 text-dark">Dashboard</h1> -->
+                                <h1 class="m-0 text-dark"><?php echo $_caption; ?></h1>
                             </div><!-- /.col -->
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Dashboard</li>
+                                    <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li> -->
+
+                                      <?php if ($this->uri->uri_string <> ''): ?>
+                                          <li class="breadcrumb-item"><a href="<?php echo site_url(); ?>">Dashboard</a></li>
+                                      <?php else: ?>
+                                        <!-- <li class="breadcrumb-item"><a href="<?php echo site_url(); ?>">Dashboard</a></li> -->
+                                        <li class="breadcrumb-item">Dashboard</li>
+                                      <?php endif; ?>
+                                      <?php $index = 0; ?>
+                                      <?php foreach ($this->uri->segments as $segment): ?>
+                                        <?php
+                                          ++$index;
+                                          $url = substr($this->uri->uri_string, 0, strpos($this->uri->uri_string, $segment)) . $segment; // echo $url;
+                                          $is_active =  $url == $this->uri->uri_string;
+                                        ?>
+                                        <?php if ($index <= 2): ?>
+                                        <li class="breadcrumb-item <?php echo $is_active ? 'active': '' ?>">
+                                          <?php if ($is_active): ?>
+                                            <?php echo ucfirst($segment) ?>
+                                          <?php else: ?>
+                                            <a href="<?php echo site_url($url) ?>"><?php echo ucfirst($segment) ?></a>
+                                          <?php endif; ?>
+                                        </li>
+                                        <?php endif; ?>
+                                      <?php endforeach; ?>
                                 </ol>
                             </div><!-- /.col -->
                         </div><!-- /.row -->
