@@ -183,6 +183,7 @@
                                     case 'shipper':
                                     case 'vendor1':
                                     case 'armada':
+                                    case 'sparepart':
                                     case 'input-tanggal-saldo-awal':
                                     case 'tanggal-saldo-awal':
                                     case 'saldo-awal':
@@ -245,7 +246,7 @@
                                     </li>
                                     <!-- stock spare part -->
                                     <li class="nav-item">
-                                        <a href="<?php echo site_url('akun'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'akun') ? 'active' : ''; ?>">
+                                        <a href="<?php echo site_url('sparepart'); ?>" class="nav-link <?php echo ($this->uri->segment(1) == 'sparepart') ? 'active' : ''; ?>">
                                             <i class="fas fa-drum-steelpan nav-icon"></i>
                                             <p>Spare Part</p>
                                         </a>

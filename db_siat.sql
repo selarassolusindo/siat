@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2021 at 09:22 PM
+-- Generation Time: Jan 10, 2021 at 11:54 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -173,6 +173,27 @@ INSERT INTO `t05_armada` (`idarmada`, `Kode`, `Merk`, `Nopol`, `Norangka`, `Nome
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `t06_sparepart`
+--
+
+CREATE TABLE `t06_sparepart` (
+  `idsparepart` int(11) NOT NULL,
+  `Kode` varchar(6) NOT NULL,
+  `Nama` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `t06_sparepart`
+--
+
+INSERT INTO `t06_sparepart` (`idsparepart`, `Kode`, `Nama`, `created_at`, `updated_at`) VALUES
+(1, 'SP0001', 'Banx', '2021-01-10 16:53:44', '2021-01-10 16:53:54');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -272,6 +293,12 @@ ALTER TABLE `t05_armada`
   ADD PRIMARY KEY (`idarmada`);
 
 --
+-- Indexes for table `t06_sparepart`
+--
+ALTER TABLE `t06_sparepart`
+  ADD PRIMARY KEY (`idsparepart`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -335,6 +362,12 @@ ALTER TABLE `t04_vendor`
 --
 ALTER TABLE `t05_armada`
   MODIFY `idarmada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `t06_sparepart`
+--
+ALTER TABLE `t06_sparepart`
+  MODIFY `idsparepart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
