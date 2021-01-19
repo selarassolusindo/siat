@@ -95,10 +95,10 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
-$db['piw'] = array(
+$db['admin'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'u473805576_piw',
+	'username' => 'u473805576_siat',
 	'password' => 'PresarioCQ43',
 	'database' => 'u473805576_piw',
 	'dbdriver' => 'mysqli',

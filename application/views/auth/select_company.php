@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- <title>AdminLTE 3 | Log in</title> -->
-    <title><?php echo SITE_NAME; ?> | Log in</title>
+    <title><?php echo SITE_NAME; ?> | Select Company</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -31,85 +31,41 @@
       <div class="card-body login-card-body">
         <!-- <p class="login-box-msg">Sign in to start your session</p> -->
 
-        <h4 class='text-center'><?php echo lang('login_heading');?></h4>
-        <p><?php echo lang('login_subheading');?></p>
+        <!-- <h4 class='text-center'><?php //echo lang('login_heading');?></h4>
+        <p><?php //echo lang('login_subheading');?></p> -->
+        <h4 class='text-center'>Select Company</h4>
+        <p>Please select a company in the list below</p>
 
         <div id="infoMessage"><?php echo $message;?></div>
 
         <!-- <form action="../../index3.html" method="post"> -->
-        <?php echo form_open("auth/login");?>
-
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Username" name='identity' id='identity'>
-            <!-- <p> -->
-            <?php //echo lang('login_identity_label', 'identity');?>
-            <?php //echo form_input($identity);?>
-            <!-- </p> -->
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password" name='password' id='password'>
-            <!-- <p> -->
-            <?php //echo lang('login_password_label', 'password');?>
-            <?php //echo form_input($password);?>
-            <!-- </p> -->
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
-          </div>
-
-          <!-- tahun ajaran -->
-          <?php //echo pre($s01_thaj);?>
-          <!-- <div class="input-group mb-3">
-              <select class="form-control" name="idthaj">
-                <option>Tahun Ajaran</option>
-                <?php foreach ($s01_thaj as $r) {
-    ?>
-                  <option value="<?php echo $r->idthaj; ?>"><?php echo $r->TahunAjaran; ?></option>
-                  <?php
-} ?>
-              </select>
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="far fa-calendar-alt"></span>
-                </div>
-              </div>
-          </div> -->
+        <?php echo form_open("auth/selectCompany");?>
 
           <!-- company -->
           <?php //echo pre($s01_thaj);?>
-          <!-- <div class="input-group mb-3">
+          <div class="input-group mb-3">
               <select class="form-control" name="idcompany">
                 <option>Company</option>
-                <?php foreach ($t01_company as $r) {
-        ?>
-                  <option value="<?php echo $r->idcompany; ?>"><?php echo $r->Nama; ?></option>
-                  <?php
-    } ?>
+                <?php foreach ($groups as $r) { ?>
+                  <option value="<?php echo $r->name; ?>"><?php echo $r->description; ?></option>
+                <?php } ?>
               </select>
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-building"></span>
                 </div>
               </div>
-          </div> -->
+          </div>
 
           <div class="row">
             <div class="col-3">
-              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-block">Proses</button>
               <!-- <p> -->
               <?php //echo form_submit('submit', lang('login_submit_btn'));?>
               <!-- </p> -->
             </div>
             <div class="col-3">
-               <a href="<?php echo site_url(); ?>" class="btn btn-default btn-block">Cancel</a>
+               <a href="<?php echo site_url('auth/logout'); ?>" class="btn btn-default btn-block">Cancel</a>
             </div>
           </div>
         <!-- </form> -->

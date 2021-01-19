@@ -184,6 +184,7 @@
                                     case 'vendor1':
                                     case 'armada':
                                     case 'sparepart':
+                                    case 'akun':
                                     case 'input-tanggal-saldo-awal':
                                     case 'tanggal-saldo-awal':
                                     case 'saldo-awal':

@@ -95,12 +95,12 @@ $db['default'] = array(
 	'save_queries' => TRUE
 );
 
-$db['piw'] = array(
+$db['admin'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-	'database' => 'db_piw',
+	'database' => 'db_siat', //'db_piw',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

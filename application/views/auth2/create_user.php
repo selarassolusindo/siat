@@ -1,4 +1,4 @@
-<!-- <h1><?php echo lang('create_user_heading');?></h1> -->
+<h1><?php echo lang('create_user_heading');?></h1>
 <p><?php echo lang('create_user_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
@@ -10,13 +10,13 @@
             <?php echo form_input($first_name);?>
       </p>
 
-      <!-- <p>
+      <p>
             <?php echo lang('create_user_lname_label', 'last_name');?> <br />
             <?php echo form_input($last_name);?>
-      </p> -->
-
+      </p>
+      
       <?php
-      if ($identity_column!=='email') {
+      if($identity_column!=='email') {
           echo '<p>';
           echo lang('create_user_identity_label', 'identity');
           echo '<br />';
@@ -26,7 +26,7 @@
       }
       ?>
 
-      <!-- <p>
+      <p>
             <?php echo lang('create_user_company_label', 'company');?> <br />
             <?php echo form_input($company);?>
       </p>
@@ -39,7 +39,7 @@
       <p>
             <?php echo lang('create_user_phone_label', 'phone');?> <br />
             <?php echo form_input($phone);?>
-      </p> -->
+      </p>
 
       <p>
             <?php echo lang('create_user_password_label', 'password');?> <br />

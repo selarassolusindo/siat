@@ -1,4 +1,4 @@
-<!-- <h1><?php echo lang('edit_user_heading');?></h1> -->
+<h1><?php echo lang('edit_user_heading');?></h1>
 <p><?php echo lang('edit_user_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
@@ -10,23 +10,12 @@
             <?php echo form_input($first_name);?>
       </p>
 
-      <!-- <p>
+      <p>
             <?php echo lang('edit_user_lname_label', 'last_name');?> <br />
             <?php echo form_input($last_name);?>
-      </p> -->
+      </p>
 
-      <?php
-      if ($identity_column!=='email') {
-          echo '<p>';
-          echo lang('edit_user_identity_label', 'identity');
-          echo '<br />';
-          echo form_error('identity');
-          echo form_input($identity);
-          echo '</p>';
-      }
-      ?>
-
-      <!-- <p>
+      <p>
             <?php echo lang('edit_user_company_label', 'company');?> <br />
             <?php echo form_input($company);?>
       </p>
@@ -34,7 +23,7 @@
       <p>
             <?php echo lang('edit_user_phone_label', 'phone');?> <br />
             <?php echo form_input($phone);?>
-      </p> -->
+      </p>
 
       <p>
             <?php echo lang('edit_user_password_label', 'password');?> <br />
@@ -52,7 +41,7 @@
           <?php foreach ($groups as $group):?>
               <label class="checkbox">
               <input type="checkbox" name="groups[]" value="<?php echo $group['id'];?>" <?php echo (in_array($group, $currentGroups)) ? 'checked="checked"' : null; ?>>
-              <?php echo htmlspecialchars($group['name'], ENT_QUOTES, 'UTF-8');?>
+              <?php echo htmlspecialchars($group['name'],ENT_QUOTES,'UTF-8');?>
               </label>
           <?php endforeach?>
 
