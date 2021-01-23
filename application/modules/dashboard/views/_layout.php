@@ -11,6 +11,13 @@
 
         <!-- Font Awesome Icons -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/fontawesome-free/css/all.min.css">
+
+        <!-- daterange picker -->
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/daterangepicker/daterangepicker.css">
+
+        <!-- Tempusdominus Bbootstrap 4 -->
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+
         <!-- overlayScrollbars -->
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
         <!-- Theme style -->
@@ -683,12 +690,21 @@
         <!-- REQUIRED SCRIPTS -->
         <!-- jQuery -->
         <script src="<?php echo base_url(); ?>assets/adminlte/plugins/jquery/jquery.min.js"></script>
+
         <!-- Bootstrap -->
         <script src="<?php echo base_url(); ?>assets/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
         <!-- overlayScrollbars -->
         <script src="<?php echo base_url(); ?>assets/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
         <!-- AdminLTE App -->
         <script src="<?php echo base_url(); ?>assets/adminlte/dist/js/adminlte.js"></script>
+
+        <!-- date-range-picker -->
+        <script src="<?php echo base_url() ?>assets/adminlte/plugins/moment/moment.min.js"></script>
+        <script src="<?php echo base_url() ?>assets/adminlte/plugins/daterangepicker/daterangepicker.js"></script>
+
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="<?php echo base_url() ?>assets/adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <!-- OPTIONAL SCRIPTS -->
         <script src="<?php echo base_url(); ?>assets/adminlte/dist/js/demo.js"></script>
@@ -703,7 +719,20 @@
         <script src="<?php echo base_url(); ?>assets/adminlte/plugins/chart.js/Chart.min.js"></script>
 
         <!-- PAGE SCRIPTS -->
-        <script src="<?php echo base_url(); ?>assets/adminlte/dist/js/pages/dashboard2.js"></script>
+        <!-- <script src="<?php echo base_url(); ?>assets/adminlte/dist/js/pages/dashboard2.js"></script> -->
+
+        <script>
+            $(function () {
+                //Date range picker
+                $('#reservation').daterangepicker()
+            })
+            $(function () {
+                //Date range picker
+                $('#reservationdate').datetimepicker({
+                    format: 'DD/MM/YYYY'
+                })
+            })
+        </script>
 
         <script>
             $(function () {

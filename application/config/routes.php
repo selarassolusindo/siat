@@ -62,3 +62,7 @@ $route['activate/(:num)']                  = 'auth/activate/$1';
 $route['edit-user/(:num)']                 = 'auth/edit_user/$1';
 $route['change-password']                  = 'auth/change_password';
 $route['select-company']                   = 'auth/selectCompany';
+$route['input-tanggal-saldo-awal']         = 'tglsaldoawal/withNext';
+$route['tanggal-saldo-awal']               = 'tglsaldoawal';
+$route['tanggal-saldo-awal/create']        = 'tglsaldoawal/create';
+$route['tanggal-saldo-awal/update/(:num)'] = 'tglsaldoawal/update/$1';
