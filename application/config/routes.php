@@ -66,3 +66,7 @@ $route['input-tanggal-saldo-awal']         = 'tglsaldoawal/withNext';
 $route['tanggal-saldo-awal']               = 'tglsaldoawal';
 $route['tanggal-saldo-awal/create']        = 'tglsaldoawal/create';
 $route['tanggal-saldo-awal/update/(:num)'] = 'tglsaldoawal/update/$1';
+$route['saldo-awal']                       = 'saldoawal';
+$route['saldo-awal/create']                = 'saldoawal/create';
+$route['saldo-awal/update/(:num)']         = 'saldoawal/update/$1';
+$route['saldo-awal/delete/(:num)']         = 'saldoawal/delete/$1';
