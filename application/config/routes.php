@@ -70,3 +70,7 @@ $route['saldo-awal']                       = 'saldoawal';
 $route['saldo-awal/create']                = 'saldoawal/create';
 $route['saldo-awal/update/(:num)']         = 'saldoawal/update/$1';
 $route['saldo-awal/delete/(:num)']         = 'saldoawal/delete/$1';
+$route['sales-order']                      = 'salesorder';
+$route['sales-order/create']               = 'salesorder/create';
+$route['sales-order/update/(:num)']        = 'salesorder/update/$1';
+$route['sales-order/delete/(:num)']        = 'salesorder/delete/$1';

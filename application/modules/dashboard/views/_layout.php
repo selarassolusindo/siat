@@ -371,7 +371,7 @@
                                         <ul class="nav nav-treeview">
                                             <!-- Pesanan Penjualan (SO) -->
                                             <li class="nav-item">
-                                                <a href="<?php echo site_url('s01_thaj'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 's01_thaj' ? 'active' : ''; ?>">
+                                                <a href="<?php echo site_url('sales-order'); ?>" class="nav-link <?php echo $this->uri->segment(1) == 'sales-order' ? 'active' : ''; ?>">
                                                     <i class="far fa-edit nav-icon"></i>
                                                     <p>Pesanan Penjualan (SO)</p>
                                                 </a>
