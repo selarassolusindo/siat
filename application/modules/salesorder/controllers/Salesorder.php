@@ -123,7 +123,8 @@ class Salesorder extends CI_Controller
         } else {
             $data = array(
 		'NomorSO' => $this->input->post('NomorSO',TRUE),
-		'Tanggal' => $this->input->post('Tanggal',TRUE),
+		// 'Tanggal' => $this->input->post('Tanggal',TRUE),
+        'Tanggal' => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('Tanggal', true)))),
 		'idcustomer' => $this->input->post('idcustomer',TRUE),
 		'idshipper' => $this->input->post('idshipper',TRUE),
 		'idarmada' => $this->input->post('idarmada',TRUE),
@@ -146,22 +147,38 @@ class Salesorder extends CI_Controller
         $row = $this->Salesorder_model->get_by_id($id);
 
         if ($row) {
+            // combo customer
+            $this->load->model('customer/Customer_model');
+            $customer = $this->Customer_model->getAll();
+
+            // combo shipper
+            $this->load->model('shipper/Shipper_model');
+            $shipper = $this->Shipper_model->getAll();
+
+            // combo armada
+            $this->load->model('armada/Armada_model');
+            $armada = $this->Armada_model->getAll();
+
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('salesorder/update_action'),
-		'idso' => set_value('idso', $row->idso),
-		'NomorSO' => set_value('NomorSO', $row->NomorSO),
-		'Tanggal' => set_value('Tanggal', $row->Tanggal),
-		'idcustomer' => set_value('idcustomer', $row->idcustomer),
-		'idshipper' => set_value('idshipper', $row->idshipper),
-		'idarmada' => set_value('idarmada', $row->idarmada),
-		'Asal' => set_value('Asal', $row->Asal),
-		'Tujuan' => set_value('Tujuan', $row->Tujuan),
-		'Driver' => set_value('Driver', $row->Driver),
-		'Harga' => set_value('Harga', $row->Harga),
-		// 'created_at' => set_value('created_at', $row->created_at),
-		// 'updated_at' => set_value('updated_at', $row->updated_at),
-	    );
+        		'idso' => set_value('idso', $row->idso),
+        		'NomorSO' => set_value('NomorSO', $row->NomorSO),
+        		// 'Tanggal' => set_value('Tanggal', $row->Tanggal),
+                'Tanggal' => set_value('Tanggal', date_format(date_create($row->Tanggal), 'd/m/Y')),
+        		'idcustomer' => set_value('idcustomer', $row->idcustomer),
+        		'idshipper' => set_value('idshipper', $row->idshipper),
+        		'idarmada' => set_value('idarmada', $row->idarmada),
+        		'Asal' => set_value('Asal', $row->Asal),
+        		'Tujuan' => set_value('Tujuan', $row->Tujuan),
+        		'Driver' => set_value('Driver', $row->Driver),
+        		'Harga' => set_value('Harga', $row->Harga),
+        		// 'created_at' => set_value('created_at', $row->created_at),
+        		// 'updated_at' => set_value('updated_at', $row->updated_at),
+                'customer_data' => $customer,
+                'shipper_data' => $shipper,
+                'armada_data' => $armada,
+            );
             // $this->load->view('salesorder/t11_so_form', $data);
             $data['_view'] = 'salesorder/t11_so_form';
             $data['_caption'] = 'Sales Order';
@@ -181,7 +198,8 @@ class Salesorder extends CI_Controller
         } else {
             $data = array(
 		'NomorSO' => $this->input->post('NomorSO',TRUE),
-		'Tanggal' => $this->input->post('Tanggal',TRUE),
+		// 'Tanggal' => $this->input->post('Tanggal',TRUE),
+        'Tanggal' => date('Y-m-d', strtotime(str_replace('/', '-', $this->input->post('Tanggal', true)))),
 		'idcustomer' => $this->input->post('idcustomer',TRUE),
 		'idshipper' => $this->input->post('idshipper',TRUE),
 		'idarmada' => $this->input->post('idarmada',TRUE),

@@ -44,11 +44,11 @@
         <table class="table table-bordered" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>NomorSO</th>
+		<th>No. Sales Order</th>
 		<th>Tanggal</th>
-		<th>Idcustomer</th>
-		<th>Idshipper</th>
-		<th>Idarmada</th>
+		<th>Customer</th>
+		<th>Shipper</th>
+		<th>Armada</th>
 		<th>Asal</th>
 		<th>Tujuan</th>
 		<th>Driver</th>
@@ -63,10 +63,11 @@
                 <tr>
 			<td width="80px"><?php echo ++$start ?></td>
 			<td><?php echo $salesorder->NomorSO ?></td>
-			<td><?php echo $salesorder->Tanggal ?></td>
-			<td><?php echo $salesorder->idcustomer ?></td>
-			<td><?php echo $salesorder->idshipper ?></td>
-			<td><?php echo $salesorder->idarmada ?></td>
+			<!-- <td><?php echo $salesorder->Tanggal ?></td> -->
+            <td><?php echo date_format(date_create($salesorder->Tanggal), 'd/m/Y') ?></td>
+			<td><?php echo $salesorder->CustomerNama ?></td>
+			<td><?php echo $salesorder->ShipperNama ?></td>
+			<td><?php echo $salesorder->Merk . ' - ' . $salesorder->Nopol ?></td>
 			<td><?php echo $salesorder->Asal ?></td>
 			<td><?php echo $salesorder->Tujuan ?></td>
 			<td><?php echo $salesorder->Driver ?></td>
@@ -75,8 +76,8 @@
 			<td><?php echo $salesorder->updated_at ?></td> -->
 			<td style="text-align:center" width="200px">
 				<?php
-				echo anchor(site_url('sales-order/read/'.$salesorder->idso),'Read');
-				echo ' | ';
+				// echo anchor(site_url('sales-order/read/'.$salesorder->idso),'Read');
+				// echo ' | ';
 				echo anchor(site_url('sales-order/update/'.$salesorder->idso),'Update');
 				echo ' | ';
 				echo anchor(site_url('sales-order/delete/'.$salesorder->idso),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');

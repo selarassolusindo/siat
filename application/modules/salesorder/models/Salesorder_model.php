@@ -128,7 +128,7 @@ class Salesorder_model extends CI_Model
         // $this->db->or_like('created_at', $q);
         // $this->db->or_like('updated_at', $q);
         $this->db->limit($limit, $start);
-        $this->db->select($this->table . '.*, t02_customer.Nama, t03_shipper.Nama, t05_armada.Merk, t05_armada.Nopol');
+        $this->db->select($this->table . '.*, t02_customer.Nama as CustomerNama, t03_shipper.Nama as ShipperNama, t05_armada.Merk, t05_armada.Nopol');
         $this->db->from($this->table);
         $this->db->join('t02_customer', 't02_customer.idcustomer = '.$this->table.'.idcustomer');
         $this->db->join('t03_shipper', 't03_shipper.idshipper = '.$this->table.'.idshipper');

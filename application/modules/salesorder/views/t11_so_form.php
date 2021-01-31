@@ -16,9 +16,21 @@
             <label for="varchar">NomorSO <?php echo form_error('NomorSO') ?></label>
             <input type="text" class="form-control" name="NomorSO" id="NomorSO" placeholder="NomorSO" value="<?php echo $NomorSO; ?>" />
         </div>
-	    <div class="form-group">
+	    <!-- <div class="form-group">
             <label for="date">Tanggal <?php echo form_error('Tanggal') ?></label>
             <input type="text" class="form-control" name="Tanggal" id="Tanggal" placeholder="Tanggal" value="<?php echo $Tanggal; ?>" />
+        </div> -->
+        <div class="form-group">
+            <!-- <label for="date">Tanggal <?php echo form_error('Tanggal') ?></label> -->
+            <!-- <input type="text" class="form-control" name="Tanggal" id="Tanggal" placeholder="Tanggal" value="<?php //echo $Tanggal; ?>" /> -->
+            <!-- <label>Date:</label> -->
+            <label for="date">Tanggal <?php echo form_error('Tanggal') ?></label>
+            <div class="col-sm-2 input-group date" id="reservationdate" data-target-input="nearest">
+                <input type="text" name="Tanggal" value="<?php echo $Tanggal; ?>" class="form-control datetimepicker-input" data-target="#reservationdate"/>
+                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
         </div>
 	    <div class="form-group">
             <label for="int">Idcustomer <?php echo form_error('idcustomer') ?></label>
