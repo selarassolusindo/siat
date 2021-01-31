@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 24, 2021 at 12:35 AM
+-- Generation Time: Jan 31, 2021 at 02:48 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -646,6 +646,27 @@ INSERT INTO `t06_sparepart` (`idsparepart`, `Kode`, `Nama`, `created_at`, `updat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `t11_so`
+--
+
+CREATE TABLE `t11_so` (
+  `idso` int(11) NOT NULL,
+  `NomorSO` varchar(10) NOT NULL,
+  `Tanggal` date NOT NULL,
+  `idcustomer` int(11) NOT NULL,
+  `idshipper` int(11) NOT NULL,
+  `idarmada` int(11) NOT NULL,
+  `Asal` text NOT NULL,
+  `Tujuan` text NOT NULL,
+  `Driver` varchar(25) NOT NULL,
+  `Harga` double NOT NULL DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `t99_tglsaldoawal`
 --
 
@@ -696,7 +717,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'admin', '$2y$12$gImgPinxMd9qhLItzzbS7ujcrDu2.XcvdvU6V.YWGQ7Vy3zVW7Yhu', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1611420808, 1, 'Admin', 'istrator', 'ADMIN', '0');
+(1, '127.0.0.1', 'admin', '$2y$12$gImgPinxMd9qhLItzzbS7ujcrDu2.XcvdvU6V.YWGQ7Vy3zVW7Yhu', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1611449092, 1, 'Admin', 'istrator', 'ADMIN', '0');
 
 -- --------------------------------------------------------
 
@@ -785,6 +806,12 @@ ALTER TABLE `t06_sparepart`
   ADD PRIMARY KEY (`idsparepart`);
 
 --
+-- Indexes for table `t11_so`
+--
+ALTER TABLE `t11_so`
+  ADD PRIMARY KEY (`idso`);
+
+--
 -- Indexes for table `t99_tglsaldoawal`
 --
 ALTER TABLE `t99_tglsaldoawal`
@@ -823,7 +850,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `t01_company`
@@ -872,6 +899,12 @@ ALTER TABLE `t05_armada`
 --
 ALTER TABLE `t06_sparepart`
   MODIFY `idsparepart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `t11_so`
+--
+ALTER TABLE `t11_so`
+  MODIFY `idso` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `t99_tglsaldoawal`
