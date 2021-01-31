@@ -287,7 +287,7 @@
                             <!-- /setup -->
 
                             <!-- transaksi -->
-                            <li class="nav-item has-treeview">
+                            <!-- <li class="nav-item has-treeview"> -->
                             <li class="nav-item has-treeview
                                 <?php
                                 switch ($this->uri->segment(1)) {
@@ -385,7 +385,29 @@
                                     <!-- <div class="dropdown-divider"></div> -->
 
                                     <!-- Penjualan -->
-                                    <li class="nav-item has-treeview">
+                                    <!-- <li class="nav-item has-treeview"> -->
+                                    <li class="nav-item has-treeview
+                                        <?php
+                                        switch ($this->uri->segment(1)) {
+                                            case 'sales-order':
+                                            // case 'user-management':
+                                            // case 'customer':
+                                            // case 'shipper':
+                                            // case 'vendor1':
+                                            // case 'armada':
+                                            // case 'sparepart':
+                                            // case 'akun':
+                                            // case 'input-tanggal-saldo-awal':
+                                            // case 'tanggal-saldo-awal':
+                                            // case 'saldo-awal':
+                                            // case 'package':
+                                                echo 'menu-open';
+                                                break;
+                                            default:
+                                                echo '';
+                                        }
+                                        ?>
+                                    ">
                                         <a href="#" class="nav-link">
                                             <i class="fas fa-chart-line nav-icon"></i>
                                             <p>Penjualan<i class="right fas fa-angle-left"></i></p>

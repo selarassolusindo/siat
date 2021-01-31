@@ -52,7 +52,18 @@
         </div>
 	    <div class="form-group">
             <label for="int">Idarmada <?php echo form_error('idarmada') ?></label>
-            <input type="text" class="form-control" name="idarmada" id="idarmada" placeholder="Idarmada" value="<?php echo $idarmada; ?>" />
+            <!-- <input type="text" class="form-control" name="idarmada" id="idarmada" placeholder="Idarmada" value="<?php echo $idarmada; ?>" /> -->
+            <select name="idarmada" class="form-control">
+				<option value="">Armada</option>
+				<?php
+				foreach($armada_data as $armada)
+				{
+					$selected = ($armada->idarmada == $idarmada) ? ' selected="selected"' : "";
+
+					echo '<option value="'.$armada->idarmada.'" '.$selected.'>'.$armada->Merk . ' - ' . $armada->Nopol . '</option>';
+				}
+				?>
+			</select>
         </div>
 	    <div class="form-group">
             <label for="Asal">Asal <?php echo form_error('Asal') ?></label>

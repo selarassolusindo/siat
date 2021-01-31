@@ -84,6 +84,10 @@ class Salesorder extends CI_Controller
         $this->load->model('shipper/Shipper_model');
         $shipper = $this->Shipper_model->getAll();
 
+        // combo armada
+        $this->load->model('armada/Armada_model');
+        $armada = $this->Armada_model->getAll();
+
         $data = array(
             'button' => 'Create',
             'action' => site_url('salesorder/create_action'),
@@ -101,6 +105,7 @@ class Salesorder extends CI_Controller
 	    // 'updated_at' => set_value('updated_at'),
         'customer_data' => $customer,
         'shipper_data' => $shipper,
+        'armada_data' => $armada,
 	);
         // $this->load->view('salesorder/t11_so_form', $data);
         $data['_view'] = 'salesorder/t11_so_form';

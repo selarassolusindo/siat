@@ -113,6 +113,17 @@ class Armada_model extends CI_Model
         return $sNextKode;
     }
 
+    /**
+     * ambil data di tabel armada
+     */
+    function getAll()
+    {
+        // $this->db->where('idakun not in (select induk from t02_akun)');
+        // $this->db->where('idakun not in (select idakun from t03_saldoawal)');
+        $this->db->order_by('Merk asc, Nopol asc');
+        return $this->db->get($this->table)->result();
+    }
+
 }
 
 /* End of file Armada_model.php */
