@@ -111,6 +111,17 @@ class Shipper_model extends CI_Model
         return $sNextKode;
     }
 
+    /**
+     * ambil data di tabel shipper
+     */
+    function getAll()
+    {
+        // $this->db->where('idakun not in (select induk from t02_akun)');
+        // $this->db->where('idakun not in (select idakun from t03_saldoawal)');
+        $this->db->order_by('Nama', 'asc');
+        return $this->db->get($this->table)->result();
+    }
+
 }
 
 /* End of file Shipper_model.php */

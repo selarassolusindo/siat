@@ -22,11 +22,33 @@
         </div>
 	    <div class="form-group">
             <label for="int">Idcustomer <?php echo form_error('idcustomer') ?></label>
-            <input type="text" class="form-control" name="idcustomer" id="idcustomer" placeholder="Idcustomer" value="<?php echo $idcustomer; ?>" />
+            <!-- <input type="text" class="form-control" name="idcustomer" id="idcustomer" placeholder="Idcustomer" value="<?php echo $idcustomer; ?>" /> -->
+            <select name="idcustomer" class="form-control">
+				<option value="">Customer</option>
+				<?php
+				foreach($customer_data as $customer)
+				{
+					$selected = ($customer->idcustomer == $idcustomer) ? ' selected="selected"' : "";
+
+					echo '<option value="'.$customer->idcustomer.'" '.$selected.'>'.$customer->Nama .'</option>';
+				}
+				?>
+			</select>
         </div>
 	    <div class="form-group">
             <label for="int">Idshipper <?php echo form_error('idshipper') ?></label>
-            <input type="text" class="form-control" name="idshipper" id="idshipper" placeholder="Idshipper" value="<?php echo $idshipper; ?>" />
+            <!-- <input type="text" class="form-control" name="idshipper" id="idshipper" placeholder="Idshipper" value="<?php echo $idshipper; ?>" /> -->
+            <select name="idshipper" class="form-control">
+				<option value="">Shipper</option>
+				<?php
+				foreach($shipper_data as $shipper)
+				{
+					$selected = ($shipper->idshipper == $idshipper) ? ' selected="selected"' : "";
+
+					echo '<option value="'.$shipper->idshipper.'" '.$selected.'>'.$shipper->Nama .'</option>';
+				}
+				?>
+			</select>
         </div>
 	    <div class="form-group">
             <label for="int">Idarmada <?php echo form_error('idarmada') ?></label>

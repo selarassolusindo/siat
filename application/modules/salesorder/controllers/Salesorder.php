@@ -76,6 +76,14 @@ class Salesorder extends CI_Controller
 
     public function create()
     {
+        // combo customer
+        $this->load->model('customer/Customer_model');
+        $customer = $this->Customer_model->getAll();
+
+        // combo shipper
+        $this->load->model('shipper/Shipper_model');
+        $shipper = $this->Shipper_model->getAll();
+
         $data = array(
             'button' => 'Create',
             'action' => site_url('salesorder/create_action'),
@@ -91,6 +99,8 @@ class Salesorder extends CI_Controller
 	    'Harga' => set_value('Harga'),
 	    // 'created_at' => set_value('created_at'),
 	    // 'updated_at' => set_value('updated_at'),
+        'customer_data' => $customer,
+        'shipper_data' => $shipper,
 	);
         // $this->load->view('salesorder/t11_so_form', $data);
         $data['_view'] = 'salesorder/t11_so_form';
