@@ -91,7 +91,7 @@
         </div> -->
 	    <input type="hidden" name="idso" value="<?php echo $idso; ?>" />
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button>
-	    <a href="<?php echo site_url('salesorder') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('sales-order') ?>" class="btn btn-default">Cancel</a>
 	</form>
     <!-- </body>
 </html> -->

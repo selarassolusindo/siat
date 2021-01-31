@@ -28,7 +28,8 @@ class Salesorder extends CI_Controller
         $config['per_page'] = 10;
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->Salesorder_model->total_rows($q);
-        $salesorder = $this->Salesorder_model->get_limit_data($config['per_page'], $start, $q);
+        // $salesorder = $this->Salesorder_model->get_limit_data($config['per_page'], $start, $q);
+        $salesorder = $this->Salesorder_model->getLimitData($config['per_page'], $start, $q);
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
@@ -70,7 +71,7 @@ class Salesorder extends CI_Controller
             $this->load->view('dashboard/_layout', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('salesorder'));
+            redirect(site_url('sales-order'));
         }
     }
 
@@ -136,7 +137,7 @@ class Salesorder extends CI_Controller
 
             $this->Salesorder_model->insert($data);
             $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('salesorder'));
+            redirect(site_url('sales-order'));
         }
     }
 
@@ -167,7 +168,7 @@ class Salesorder extends CI_Controller
             $this->load->view('dashboard/_layout', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('salesorder'));
+            redirect(site_url('sales-order'));
         }
     }
 
@@ -194,7 +195,7 @@ class Salesorder extends CI_Controller
 
             $this->Salesorder_model->update($this->input->post('idso', TRUE), $data);
             $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('salesorder'));
+            redirect(site_url('sales-order'));
         }
     }
 
@@ -205,10 +206,10 @@ class Salesorder extends CI_Controller
         if ($row) {
             $this->Salesorder_model->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
-            redirect(site_url('salesorder'));
+            redirect(site_url('sales-order'));
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
-            redirect(site_url('salesorder'));
+            redirect(site_url('sales-order'));
         }
     }
 
