@@ -13,7 +13,7 @@
         <h2 style="margin-top:0px">T11_so <?php echo $button ?></h2> -->
         <form action="<?php echo $action; ?>" method="post">
 	    <div class="form-group">
-            <label for="varchar">NomorSO <?php echo form_error('NomorSO') ?></label>
+            <label for="varchar">No. Sales Order <?php echo form_error('NomorSO') ?></label>
             <input type="text" class="form-control" name="NomorSO" id="NomorSO" placeholder="NomorSO" value="<?php echo $NomorSO; ?>" />
         </div>
 	    <!-- <div class="form-group">
@@ -33,7 +33,7 @@
             </div>
         </div>
 	    <div class="form-group">
-            <label for="int">Idcustomer <?php echo form_error('idcustomer') ?></label>
+            <label for="int">Customer <?php echo form_error('idcustomer') ?></label>
             <!-- <input type="text" class="form-control" name="idcustomer" id="idcustomer" placeholder="Idcustomer" value="<?php echo $idcustomer; ?>" /> -->
             <select name="idcustomer" class="form-control">
 				<option value="">Customer</option>
@@ -48,7 +48,7 @@
 			</select>
         </div>
 	    <div class="form-group">
-            <label for="int">Idshipper <?php echo form_error('idshipper') ?></label>
+            <label for="int">Shipper <?php echo form_error('idshipper') ?></label>
             <!-- <input type="text" class="form-control" name="idshipper" id="idshipper" placeholder="Idshipper" value="<?php echo $idshipper; ?>" /> -->
             <select name="idshipper" class="form-control">
 				<option value="">Shipper</option>
@@ -63,7 +63,7 @@
 			</select>
         </div>
 	    <div class="form-group">
-            <label for="int">Idarmada <?php echo form_error('idarmada') ?></label>
+            <label for="int">Armada <?php echo form_error('idarmada') ?></label>
             <!-- <input type="text" class="form-control" name="idarmada" id="idarmada" placeholder="Idarmada" value="<?php echo $idarmada; ?>" /> -->
             <select name="idarmada" class="form-control">
 				<option value="">Armada</option>
