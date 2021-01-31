@@ -28,6 +28,7 @@
 		<th>Asal</th>
 		<th>Tujuan</th>
 		<th>Driver</th>
+		<th>Harga</th>
 		<th>Created At</th>
 		<th>Updated At</th>
 		
@@ -45,6 +46,7 @@
 		      <td><?php echo $salesorder->Asal ?></td>
 		      <td><?php echo $salesorder->Tujuan ?></td>
 		      <td><?php echo $salesorder->Driver ?></td>
+		      <td><?php echo $salesorder->Harga ?></td>
 		      <td><?php echo $salesorder->created_at ?></td>
 		      <td><?php echo $salesorder->updated_at ?></td>	
                 </tr>

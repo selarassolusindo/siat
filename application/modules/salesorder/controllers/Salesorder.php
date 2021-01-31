@@ -16,7 +16,7 @@ class Salesorder extends CI_Controller
     {
         $q = urldecode($this->input->get('q', TRUE));
         $start = intval($this->input->get('start'));
-        
+
         if ($q <> '') {
             $config['base_url'] = base_url() . 'salesorder/index.html?q=' . urlencode($q);
             $config['first_url'] = base_url() . 'salesorder/index.html?q=' . urlencode($q);
@@ -40,10 +40,13 @@ class Salesorder extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('salesorder/t11_so_list', $data);
+        // $this->load->view('salesorder/t11_so_list', $data);
+        $data['_view'] = 'salesorder/t11_so_list';
+        $data['_caption'] = 'Sales Order';
+        $this->load->view('dashboard/_layout', $data);
     }
 
-    public function read($id) 
+    public function read($id)
     {
         $row = $this->Salesorder_model->get_by_id($id);
         if ($row) {
@@ -57,17 +60,21 @@ class Salesorder extends CI_Controller
 		'Asal' => $row->Asal,
 		'Tujuan' => $row->Tujuan,
 		'Driver' => $row->Driver,
-		'created_at' => $row->created_at,
-		'updated_at' => $row->updated_at,
+		'Harga' => $row->Harga,
+		// 'created_at' => $row->created_at,
+		// 'updated_at' => $row->updated_at,
 	    );
-            $this->load->view('salesorder/t11_so_read', $data);
+            // $this->load->view('salesorder/t11_so_read', $data);
+            $data['_view'] = 'salesorder/t11_so_read';
+            $data['_caption'] = 'Sales Order';
+            $this->load->view('dashboard/_layout', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('salesorder'));
         }
     }
 
-    public function create() 
+    public function create()
     {
         $data = array(
             'button' => 'Create',
@@ -81,13 +88,17 @@ class Salesorder extends CI_Controller
 	    'Asal' => set_value('Asal'),
 	    'Tujuan' => set_value('Tujuan'),
 	    'Driver' => set_value('Driver'),
-	    'created_at' => set_value('created_at'),
-	    'updated_at' => set_value('updated_at'),
+	    'Harga' => set_value('Harga'),
+	    // 'created_at' => set_value('created_at'),
+	    // 'updated_at' => set_value('updated_at'),
 	);
-        $this->load->view('salesorder/t11_so_form', $data);
+        // $this->load->view('salesorder/t11_so_form', $data);
+        $data['_view'] = 'salesorder/t11_so_form';
+        $data['_caption'] = 'Sales Order';
+        $this->load->view('dashboard/_layout', $data);
     }
-    
-    public function create_action() 
+
+    public function create_action()
     {
         $this->_rules();
 
@@ -103,8 +114,9 @@ class Salesorder extends CI_Controller
 		'Asal' => $this->input->post('Asal',TRUE),
 		'Tujuan' => $this->input->post('Tujuan',TRUE),
 		'Driver' => $this->input->post('Driver',TRUE),
-		'created_at' => $this->input->post('created_at',TRUE),
-		'updated_at' => $this->input->post('updated_at',TRUE),
+		'Harga' => $this->input->post('Harga',TRUE),
+		// 'created_at' => $this->input->post('created_at',TRUE),
+		// 'updated_at' => $this->input->post('updated_at',TRUE),
 	    );
 
             $this->Salesorder_model->insert($data);
@@ -112,8 +124,8 @@ class Salesorder extends CI_Controller
             redirect(site_url('salesorder'));
         }
     }
-    
-    public function update($id) 
+
+    public function update($id)
     {
         $row = $this->Salesorder_model->get_by_id($id);
 
@@ -130,17 +142,21 @@ class Salesorder extends CI_Controller
 		'Asal' => set_value('Asal', $row->Asal),
 		'Tujuan' => set_value('Tujuan', $row->Tujuan),
 		'Driver' => set_value('Driver', $row->Driver),
-		'created_at' => set_value('created_at', $row->created_at),
-		'updated_at' => set_value('updated_at', $row->updated_at),
+		'Harga' => set_value('Harga', $row->Harga),
+		// 'created_at' => set_value('created_at', $row->created_at),
+		// 'updated_at' => set_value('updated_at', $row->updated_at),
 	    );
-            $this->load->view('salesorder/t11_so_form', $data);
+            // $this->load->view('salesorder/t11_so_form', $data);
+            $data['_view'] = 'salesorder/t11_so_form';
+            $data['_caption'] = 'Sales Order';
+            $this->load->view('dashboard/_layout', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('salesorder'));
         }
     }
-    
-    public function update_action() 
+
+    public function update_action()
     {
         $this->_rules();
 
@@ -156,8 +172,9 @@ class Salesorder extends CI_Controller
 		'Asal' => $this->input->post('Asal',TRUE),
 		'Tujuan' => $this->input->post('Tujuan',TRUE),
 		'Driver' => $this->input->post('Driver',TRUE),
-		'created_at' => $this->input->post('created_at',TRUE),
-		'updated_at' => $this->input->post('updated_at',TRUE),
+		'Harga' => $this->input->post('Harga',TRUE),
+		// 'created_at' => $this->input->post('created_at',TRUE),
+		// 'updated_at' => $this->input->post('updated_at',TRUE),
 	    );
 
             $this->Salesorder_model->update($this->input->post('idso', TRUE), $data);
@@ -165,8 +182,8 @@ class Salesorder extends CI_Controller
             redirect(site_url('salesorder'));
         }
     }
-    
-    public function delete($id) 
+
+    public function delete($id)
     {
         $row = $this->Salesorder_model->get_by_id($id);
 
@@ -180,7 +197,7 @@ class Salesorder extends CI_Controller
         }
     }
 
-    public function _rules() 
+    public function _rules()
     {
 	$this->form_validation->set_rules('NomorSO', 'nomorso', 'trim|required');
 	$this->form_validation->set_rules('Tanggal', 'tanggal', 'trim|required');
@@ -190,8 +207,9 @@ class Salesorder extends CI_Controller
 	$this->form_validation->set_rules('Asal', 'asal', 'trim|required');
 	$this->form_validation->set_rules('Tujuan', 'tujuan', 'trim|required');
 	$this->form_validation->set_rules('Driver', 'driver', 'trim|required');
-	$this->form_validation->set_rules('created_at', 'created at', 'trim|required');
-	$this->form_validation->set_rules('updated_at', 'updated at', 'trim|required');
+	$this->form_validation->set_rules('Harga', 'harga', 'trim|required|numeric');
+	// $this->form_validation->set_rules('created_at', 'created at', 'trim|required');
+	// $this->form_validation->set_rules('updated_at', 'updated at', 'trim|required');
 
 	$this->form_validation->set_rules('idso', 'idso', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
@@ -227,6 +245,7 @@ class Salesorder extends CI_Controller
 	xlsWriteLabel($tablehead, $kolomhead++, "Asal");
 	xlsWriteLabel($tablehead, $kolomhead++, "Tujuan");
 	xlsWriteLabel($tablehead, $kolomhead++, "Driver");
+	xlsWriteLabel($tablehead, $kolomhead++, "Harga");
 	xlsWriteLabel($tablehead, $kolomhead++, "Created At");
 	xlsWriteLabel($tablehead, $kolomhead++, "Updated At");
 
@@ -243,6 +262,7 @@ class Salesorder extends CI_Controller
 	    xlsWriteLabel($tablebody, $kolombody++, $data->Asal);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->Tujuan);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->Driver);
+	    xlsWriteNumber($tablebody, $kolombody++, $data->Harga);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->created_at);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->updated_at);
 
@@ -263,7 +283,7 @@ class Salesorder extends CI_Controller
             't11_so_data' => $this->Salesorder_model->get_all(),
             'start' => 0
         );
-        
+
         $this->load->view('salesorder/t11_so_doc',$data);
     }
 
@@ -272,5 +292,5 @@ class Salesorder extends CI_Controller
 /* End of file Salesorder.php */
 /* Location: ./application/controllers/Salesorder.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2021-01-24 17:04:08 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2021-01-30 21:17:19 */
 /* http://harviacode.com */

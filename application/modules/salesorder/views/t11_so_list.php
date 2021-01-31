@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
     <head>
         <title>harviacode.com - codeigniter crud generator</title>
@@ -10,10 +10,10 @@
         </style>
     </head>
     <body>
-        <h2 style="margin-top:0px">T11_so List</h2>
+        <h2 style="margin-top:0px">T11_so List</h2> -->
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
-                <?php echo anchor(site_url('salesorder/create'),'Create', 'class="btn btn-primary"'); ?>
+                <?php echo anchor(site_url('sales-order/create'),'Create', 'class="btn btn-primary"'); ?>
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">
@@ -27,7 +27,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" name="q" value="<?php echo $q; ?>">
                         <span class="input-group-btn">
-                            <?php 
+                            <?php
                                 if ($q <> '')
                                 {
                                     ?>
@@ -52,8 +52,9 @@
 		<th>Asal</th>
 		<th>Tujuan</th>
 		<th>Driver</th>
-		<th>Created At</th>
-		<th>Updated At</th>
+		<th>Harga</th>
+		<!-- <th>Created At</th>
+		<th>Updated At</th> -->
 		<th>Action</th>
             </tr><?php
             foreach ($salesorder_data as $salesorder)
@@ -69,15 +70,16 @@
 			<td><?php echo $salesorder->Asal ?></td>
 			<td><?php echo $salesorder->Tujuan ?></td>
 			<td><?php echo $salesorder->Driver ?></td>
-			<td><?php echo $salesorder->created_at ?></td>
-			<td><?php echo $salesorder->updated_at ?></td>
+			<td><?php echo $salesorder->Harga ?></td>
+			<!-- <td><?php echo $salesorder->created_at ?></td>
+			<td><?php echo $salesorder->updated_at ?></td> -->
 			<td style="text-align:center" width="200px">
-				<?php 
-				echo anchor(site_url('salesorder/read/'.$salesorder->idso),'Read'); 
-				echo ' | '; 
-				echo anchor(site_url('salesorder/update/'.$salesorder->idso),'Update'); 
-				echo ' | '; 
-				echo anchor(site_url('salesorder/delete/'.$salesorder->idso),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+				<?php
+				echo anchor(site_url('sales-order/read/'.$salesorder->idso),'Read');
+				echo ' | ';
+				echo anchor(site_url('sales-order/update/'.$salesorder->idso),'Update');
+				echo ' | ';
+				echo anchor(site_url('sales-order/delete/'.$salesorder->idso),'Delete','onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
 				?>
 			</td>
 		</tr>
@@ -95,5 +97,5 @@
                 <?php echo $pagination ?>
             </div>
         </div>
-    </body>
-</html>
+    <!-- </body>
+</html> -->
